@@ -65,7 +65,7 @@ public final class RadarCommand {
 
     /** Prova la scansione su una struttura qualsiasi (es. minecraft:village_plains), senza carburante. */
     private static int debugScan(CommandSourceStack source, ResourceLocation id) {
-        ServerLevel level = source.getLevel();
+        ServerLevel level = source.getLevel() != null ? source.getLevel() : source.getServer().overworld();
         var holder = level.registryAccess().registryOrThrow(Registries.STRUCTURE)
                 .getHolder(ResourceKey.create(Registries.STRUCTURE, id));
         if (holder.isEmpty()) {
