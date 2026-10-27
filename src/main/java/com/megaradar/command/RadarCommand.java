@@ -48,8 +48,14 @@ public final class RadarCommand {
                 .then(Commands.literal("debugscan")
                         .requires(src -> src.hasPermission(2))
                         .then(Commands.argument("structure", ResourceLocationArgument.id())
-                                .executes(ctx -> debugScan(ctx.getSource(),
-                                        ResourceLocationArgument.getId(ctx, "structure")))))
+                                .executes(ctx -> {
+                                    try {
+                                        return debugScan(ctx.getSource(), ResourceLocationArgument.getId(ctx, "structure"));
+                                    } catch (Exception e) {
+                                        com.megaradar.MegaRadar.LOGGER.error("debugscan fallito", e);
+                                        throw e;
+                                    }
+                                })))
                 .then(Commands.literal("reset")
                         .executes(ctx -> reset(ctx.getSource(), ctx.getSource().getPlayerOrException()))
                         .then(Commands.argument("player", EntityArgument.player())
