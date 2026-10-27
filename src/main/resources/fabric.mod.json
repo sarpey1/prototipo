@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "megaradar",
+  "version": "${version}",
+  "name": "Mega Radar",
+  "description": "Due radar alimentati a minerali per localizzare Megaroidi e Megasite (Mega Showdown) senza impazzire.",
+  "authors": ["Tu"],
+  "license": "MIT",
+  "icon": "assets/megaradar/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.megaradar.MegaRadar"],
+    "client": ["com.megaradar.client.MegaRadarClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric-api": "*",
+    "minecraft": "~1.21.1",
+    "java": ">=21"
+  },
+  "suggests": {
+    "mega_showdown": "*",
+    "cobblemon": "*"
+  }
+}

@@ -1,0 +1,50 @@
+name: Build Mega Radar
+
+on:
+  push:
+    branches: [megaradar-build]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.14.3'
+
+      - name: Compile
+        run: gradle build --stacktrace --no-daemon 2>&1 | tee build.log; exit ${PIPESTATUS[0]}
+
+      - name: Server smoke test
+        if: success()
+        run: bash ci/server-test.sh
+
+      - name: Publish jar and logs to megaradar-dist
+        if: always()
+        run: |
+          mkdir -p /tmp/dist
+          cp build.log /tmp/dist/ 2>/dev/null || true
+          cp server-test.log /tmp/dist/ 2>/dev/null || true
+          cp run/logs/latest.log /tmp/dist/server-latest.log 2>/dev/null || true
+          for f in build/libs/*.jar; do case "$f" in *-sources.jar) ;; *) cp "$f" /tmp/dist/ ;; esac; done 2>/dev/null || true
+          echo "${{ github.sha }} ${{ job.status }}" > /tmp/dist/STATUS.txt
+          cd /tmp/dist
+          git init -q
+          git config user.name "megaradar-ci"
+          git config user.email "megaradar-ci@users.noreply.github.com"
+          git checkout -q -b megaradar-dist
+          git add -A
+          git commit -q -m "Build of ${{ github.sha }}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" megaradar-dist

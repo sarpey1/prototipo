@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "BNB",
+    "TSR",
+    "BNB"
+  ],
+  "key": {
+    "B": { "item": "minecraft:emerald_block" },
+    "N": { "item": "minecraft:netherite_ingot" },
+    "S": { "item": "minecraft:nether_star" },
+    "T": { "item": "minecraft:recovery_compass" },
+    "R": { "item": "minecraft:heart_of_the_sea" }
+  },
+  "result": { "id": "megaradar:mega_city_radar", "count": 1 }
+}

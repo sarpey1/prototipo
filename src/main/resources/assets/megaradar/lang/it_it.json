@@ -1,0 +1,37 @@
+{
+  "item.megaradar.megaroid_radar": "Radar per Megaroidi",
+  "item.megaradar.mega_city_radar": "Radar per Megasite",
+  "itemGroup.megaradar.main": "Mega Radar",
+
+  "megaradar.target.megaroid": "Megaroide",
+  "megaradar.target.mega_city": "Megasite",
+
+  "megaradar.hint.megaroid": "Il meteorite è sepolto tra Y -20 e Y -32. Serve un piccone di diamante o superiore.",
+  "megaradar.hint.mega_city": "Il sito è sotterraneo, all'incirca tra Y 5 e Y -19. Il Mega Crystal richiede un piccone di diamante.",
+
+  "megaradar.msg.scanning": "Scansione in corso: %s...",
+  "megaradar.msg.found_header": "Radar: %s × %s non ancora visitati, dal più vicino:",
+  "megaradar.msg.found_line": "  #%s  X %s, Z %s  (%s blocchi)",
+  "megaradar.msg.not_found": "Nessun %s non ancora visitato entro %s chunk.",
+  "megaradar.msg.no_targets": "Nessuna struttura bersaglio disponibile. Mega Showdown è installato?",
+  "megaradar.msg.missing_fuel": "Carburante insufficiente! Ti mancano:",
+  "megaradar.msg.fuel_line": "  • %s ×%s",
+  "megaradar.msg.arrived": "%s raggiunto! Non verrà più mostrato nelle prossime scansioni.",
+  "megaradar.msg.skipped": "%s saltato: non verrà più mostrato.",
+  "megaradar.msg.next_target": "Prossimo bersaglio: X %s, Z %s (ne restano %s)",
+  "megaradar.msg.list_done": "Lista finita: usa di nuovo il radar per cercare le prossime strutture.",
+  "megaradar.msg.no_current": "Nessun bersaglio attivo da saltare.",
+
+  "megaradar.tooltip.current": "Bersaglio: X %s, Z %s (%s in lista)",
+  "megaradar.tooltip.use": "Clic destro: cerca %s non ancora visitati",
+  "megaradar.tooltip.skip": "Sneak + clic destro: salta il bersaglio attuale",
+  "megaradar.tooltip.fuel": "Carburante per ogni scansione:",
+  "megaradar.tooltip.fuel_line": "  %s ×%s",
+
+  "megaradar.hud.line": "%s  %s · %s m  (%s/%s)",
+  "megaradar.hud.done": "%s: lista finita, scansiona di nuovo",
+  "megaradar.hud.other_dimension": "%s: bersaglio in un'altra dimensione",
+
+  "megaradar.cmd.reloaded": "Config di Mega Radar ricaricata.",
+  "megaradar.cmd.reset": "Azzerate %s strutture visitate di %s."
+}

@@ -1,0 +1,37 @@
+{
+  "item.megaradar.megaroid_radar": "Megaroid Radar",
+  "item.megaradar.mega_city_radar": "Megasite Radar",
+  "itemGroup.megaradar.main": "Mega Radar",
+
+  "megaradar.target.megaroid": "Megaroid",
+  "megaradar.target.mega_city": "Megasite",
+
+  "megaradar.hint.megaroid": "The meteorite is buried between Y -20 and Y -32. Needs a diamond pickaxe or better.",
+  "megaradar.hint.mega_city": "The site is underground, roughly between Y 5 and Y -19. The Mega Crystal needs a diamond pickaxe.",
+
+  "megaradar.msg.scanning": "Scanning for %s...",
+  "megaradar.msg.found_header": "Radar: %s unvisited %s, nearest first:",
+  "megaradar.msg.found_line": "  #%s  X %s, Z %s  (%s blocks)",
+  "megaradar.msg.not_found": "No unvisited %s within %s chunks.",
+  "megaradar.msg.no_targets": "No target structures available. Is Mega Showdown installed?",
+  "megaradar.msg.missing_fuel": "Not enough fuel! You are missing:",
+  "megaradar.msg.fuel_line": "  • %s ×%s",
+  "megaradar.msg.arrived": "%s reached! It won't show up in future scans.",
+  "megaradar.msg.skipped": "%s skipped: it won't show up again.",
+  "megaradar.msg.next_target": "Next target: X %s, Z %s (%s left)",
+  "megaradar.msg.list_done": "List finished: use the radar again to find the next structures.",
+  "megaradar.msg.no_current": "No active target to skip.",
+
+  "megaradar.tooltip.current": "Target: X %s, Z %s (%s in list)",
+  "megaradar.tooltip.use": "Right-click: find unvisited %s",
+  "megaradar.tooltip.skip": "Sneak + right-click: skip current target",
+  "megaradar.tooltip.fuel": "Fuel per scan:",
+  "megaradar.tooltip.fuel_line": "  %s ×%s",
+
+  "megaradar.hud.line": "%s  %s · %s m  (%s/%s)",
+  "megaradar.hud.done": "%s: list finished, scan again",
+  "megaradar.hud.other_dimension": "%s: target is in another dimension",
+
+  "megaradar.cmd.reloaded": "Mega Radar config reloaded.",
+  "megaradar.cmd.reset": "Cleared %s visited structures for %s."
+}

@@ -1,0 +1,6 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "mega_showdown:mega_site", "required": false }
+  ]
+}
