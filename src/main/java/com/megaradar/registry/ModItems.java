@@ -36,6 +36,10 @@ public final class ModItems {
                     })
                     .build());
 
+    public static RadarItem forType(RadarType type) {
+        return type == RadarType.MEGA_CITY ? MEGA_CITY_RADAR : MEGAROID_RADAR;
+    }
+
     private static Item.Properties radarProps() {
         return new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant();
     }

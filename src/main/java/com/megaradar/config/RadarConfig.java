@@ -42,7 +42,10 @@ public final class RadarConfig {
     /** Distanza orizzontale (blocchi) entro cui una struttura conta come "raggiunta" e viene esclusa in futuro. */
     public int arrivalRadius = 24;
 
-    /** Carburante per UN utilizzo: itemId -> quantità. Default = uno stack di ogni minerale. */
+    /**
+     * Carburante per UN utilizzo: itemId -> quantità. Default = uno stack di ogni minerale.
+     * Ogni voce è uno slot sui vertici del decagono: massimo 10 voci, quantità massima = uno stack.
+     */
     public LinkedHashMap<String, Integer> fuelPerUse = defaultFuel();
 
     /** ID di strutture extra (oltre al tag megaradar:megaroid_targets). */

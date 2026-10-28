@@ -5,6 +5,7 @@ import com.megaradar.config.RadarConfig;
 import com.megaradar.fuel.FuelManager;
 import com.megaradar.network.ModNetworking;
 import com.megaradar.registry.ModItems;
+import com.megaradar.registry.ModMenus;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
@@ -29,6 +30,7 @@ public class MegaRadar implements ModInitializer {
     public void onInitialize() {
         RadarConfig.load();
         ModItems.register();
+        ModMenus.register();
         ModNetworking.registerPayloadTypes();
 
         // Quando un giocatore entra, gli mandiamo il costo carburante deciso dal server

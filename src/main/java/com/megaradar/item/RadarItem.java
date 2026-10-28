@@ -3,6 +3,7 @@ package com.megaradar.item;
 import com.megaradar.config.RadarConfig;
 import com.megaradar.data.VisitedData;
 import com.megaradar.fuel.FuelManager;
+import com.megaradar.menu.RadarMenu;
 import com.megaradar.radar.RadarTargets;
 import com.megaradar.radar.RadarType;
 import com.megaradar.radar.StructureScanner;
@@ -31,8 +32,8 @@ import java.util.Optional;
 /**
  * Radar. Tutta la logica gira SUL SERVER.
  *
- *  - Clic destro: consuma il carburante e memorizza nel radar le N strutture più vicine
- *    che il giocatore NON ha ancora raggiunto.
+ *  - Clic destro: apre la GUI a decagono. Inserito il carburante, il bottone "Cerca" memorizza
+ *    nel radar le N strutture più vicine che il giocatore NON ha ancora raggiunto.
  *  - Mentre lo tieni nella hotbar, l'HUD mostra la freccia verso il bersaglio attuale.
  *  - Quando arrivi vicino al bersaglio, viene segnato come visitato e il radar passa
  *    automaticamente al successivo (senza consumare carburante).
@@ -65,13 +66,19 @@ public class RadarItem extends Item {
             player.getCooldowns().addCooldown(this, 10);
             return InteractionResultHolder.consume(stack);
         }
-        scan(serverPlayer, serverLevel, stack);
+        // Apre la GUI a decagono: il carburante si inserisce lì e la scansione parte dal bottone "Cerca"
+        serverPlayer.openMenu(new RadarMenu.Provider(type, hand, stack.getHoverName()));
         return InteractionResultHolder.consume(stack);
     }
 
-    private void scan(ServerPlayer player, ServerLevel level, ItemStack stack) {
+    public enum ScanResult { FOUND, NOT_FOUND, NO_TARGETS }
+
+    /**
+     * Esegue la scansione (lato server). Il carburante è gestito da {@link RadarMenu}:
+     * qui si cercano le strutture, si salvano i bersagli nel radar e si avvisa il giocatore.
+     */
+    public ScanResult performScan(ServerPlayer player, ServerLevel level, ItemStack stack) {
         RadarConfig cfg = RadarConfig.get();
-        boolean creative = player.getAbilities().instabuild;
         BlockPos origin = player.blockPosition();
         ResourceLocation dimension = level.dimension().location();
 
@@ -79,22 +86,7 @@ public class RadarItem extends Item {
         if (targets.isEmpty()) {
             player.displayClientMessage(Component.translatable("megaradar.msg.no_targets")
                     .withStyle(ChatFormatting.RED), false);
-            return;
-        }
-
-        // Controllo del carburante PRIMA della scansione (che è costosa)
-        if (!creative) {
-            List<FuelManager.FuelEntry> missing = FuelManager.missing(player);
-            if (!missing.isEmpty()) {
-                player.displayClientMessage(Component.translatable("megaradar.msg.missing_fuel")
-                        .withStyle(ChatFormatting.RED), false);
-                for (FuelManager.FuelEntry m : missing) {
-                    player.displayClientMessage(Component.translatable("megaradar.msg.fuel_line",
-                            m.item().getDescription(), m.count()).withStyle(ChatFormatting.GRAY), false);
-                }
-                level.playSound(null, origin, SoundEvents.DISPENSER_FAIL, SoundSource.PLAYERS, 0.8f, 0.6f);
-                return;
-            }
+            return ScanResult.NO_TARGETS;
         }
 
         player.displayClientMessage(Component.translatable("megaradar.msg.scanning", type.displayName())
@@ -108,14 +100,12 @@ public class RadarItem extends Item {
         player.getCooldowns().addCooldown(this, cfg.cooldownTicks);
 
         if (found.isEmpty()) {
-            if (!creative && !cfg.consumeFuelOnlyIfFound) FuelManager.consume(player);
             player.displayClientMessage(Component.translatable("megaradar.msg.not_found",
                     type.displayName(), cfg.searchRadiusChunks).withStyle(ChatFormatting.YELLOW), false);
             level.playSound(null, origin, SoundEvents.BEACON_DEACTIVATE, SoundSource.PLAYERS, 0.6f, 1.2f);
-            return;
+            return ScanResult.NOT_FOUND;
         }
 
-        if (!creative) FuelManager.consume(player);
         RadarTargets.write(stack, dimension, found, 0);
 
         player.displayClientMessage(Component.translatable("megaradar.msg.found_header",
@@ -128,6 +118,7 @@ public class RadarItem extends Item {
         }
         player.displayClientMessage(type.hint().copy().withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC), false);
         level.playSound(null, origin, SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.PLAYERS, 1.0f, 1.0f);
+        return ScanResult.FOUND;
     }
 
     private void skipCurrent(ServerPlayer player, ServerLevel level, ItemStack stack) {

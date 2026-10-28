@@ -1,6 +1,9 @@
 package com.megaradar.client;
 
+import com.megaradar.client.gui.RadarScreen;
 import com.megaradar.fuel.FuelManager;
+import com.megaradar.registry.ModMenus;
+import net.minecraft.client.gui.screens.MenuScreens;
 import com.megaradar.network.FuelSyncPayload;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
@@ -16,6 +19,8 @@ public class MegaRadarClient implements ClientModInitializer {
                 context.client().execute(() -> FuelManager.setSynced(payload.fuel())));
 
         HudRenderCallback.EVENT.register(RadarHud::render);
+
+        MenuScreens.register(ModMenus.RADAR, RadarScreen::new);
 
         ClientPlayConnectionEvents.DISCONNECT.register((handler, client) -> FuelManager.setSynced(null));
     }
