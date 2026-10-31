@@ -12,7 +12,7 @@ printf 'online-mode=false\nlevel-seed=12345\nspawn-protection=0\n' > $D/server.p
 curl -sSL -o $D/server.jar "https://meta.fabricmc.net/v2/versions/loader/$MC/$LOADER/1.0.3/server/jar"
 curl -sSL -o $D/mods/fabric-api.jar "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/$FAPI/fabric-api-$FAPI.jar"
 echo "Mod da Modrinth:"
-python3 ci/modrinth.py $D/mods "cobblemon@1.7.3+1.21.1" "SszvX85I@${MSD_VERSION:-+1.7.3+}" || exit 1
+python3 ci/modrinth.py $D/mods "cobblemon@1.7.3" "SszvX85I@${MSD_VERSION:-+1.7.3+}" || exit 1
 for f in build/libs/*.jar; do case "$f" in *-sources.jar) ;; *) cp "$f" $D/mods/ ;; esac; done
 ls $D/mods
 

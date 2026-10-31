@@ -15,10 +15,11 @@ def versions(project):
 
 def pick(project, exact=None):
     vs = versions(project)
+    all_numbers = [v["version_number"] for v in vs]
     if exact:  # corrispondenza parziale: "+1.7.3" = ultima versione per Cobblemon 1.7.3
         vs = [v for v in vs if exact in v["version_number"]]
     if not vs:
-        raise SystemExit(f"nessuna versione per {project} {exact or ''}")
+        raise SystemExit(f"nessuna versione per {project} {exact or ''}; disponibili: {all_numbers[:25]}")
     return vs[0]
 
 def download(version, out):
