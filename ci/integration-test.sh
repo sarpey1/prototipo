@@ -2,7 +2,7 @@
 # Server Fabric "di produzione" con Cobblemon + Mega Showdown + Mega Radar (come in Cobbleverse).
 set -u
 MC=1.21.1
-LOADER=$(grep '^loader_version' gradle.properties | cut -d= -f2)
+LOADER=0.17.3
 FAPI=$(grep '^fabric_version' gradle.properties | cut -d= -f2)
 D=itest
 rm -rf $D && mkdir -p $D/mods
