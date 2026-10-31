@@ -43,7 +43,7 @@ jobs:
 
       - name: Unlimited megas - Cobblemon + Mega Showdown server
         if: success()
-        run: bash ci/integration-test.sh
+        run: set -o pipefail; bash ci/integration-test.sh 2>&1 | tee integration-steps.log
 
       - name: GUI preview
         if: success()
@@ -60,7 +60,7 @@ jobs:
           cp build.log /tmp/dist/ 2>/dev/null || true
           cp server-test.log /tmp/dist/ 2>/dev/null || true
           cp gui-preview.png gui-anim.gif /tmp/dist/ 2>/dev/null || true
-          cp megatest.log integration-test.log /tmp/dist/ 2>/dev/null || true
+          cp megatest.log integration-test.log integration-steps.log /tmp/dist/ 2>/dev/null || true
           cp run/logs/latest.log /tmp/dist/server-latest.log 2>/dev/null || true
           for f in build/libs/*.jar; do case "$f" in *-sources.jar) ;; *) cp "$f" /tmp/dist/ ;; esac; done 2>/dev/null || true
           echo "${{ github.sha }} ${{ job.status }}" > /tmp/dist/STATUS.txt
