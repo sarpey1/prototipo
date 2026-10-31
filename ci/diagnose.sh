@@ -27,6 +27,19 @@ if [ -n "$MSD" ]; then
   unzip -p "$MSD" assets/mega_showdown/showdown/battle-actions.js | grep -n "runMegaEvo(pokemon)" -A25 > diag/msd-runMegaEvo.txt 2>&1
 fi
 
+# ---- mod di Cobbleverse che toccano le battaglie: cerca riferimenti a Mega / gimmick / showdown
+for J in cvmods/rctapi*.jar cvmods/rctmod*.jar cvmods/zamega*.jar cvmods/cobblemon-battle-extras*.jar; do
+  [ -f "$J" ] || continue
+  n=$(basename "$J" .jar); mkdir -p "diag/mods/$n"
+  unzip -Z1 "$J" > "diag/mods/$n/files.txt"
+  unzip -Z1 "$J" | grep -iE "\.(js|json|mixins\.json)$" | grep -iE "showdown|mega|gimmick|battle|mixin" | head -80 > "diag/mods/$n/interesting-files.txt"
+  rm -rf x && mkdir x && (cd x && unzip -q -o "../$J")
+  grep -rlaiE "canMegaEvo|megaEvo|MEGA_EVOLUTION|blockGimmick|key_stone|keyItem|runMegaEvo|hasMegaEvolved|showdown/sim|battle-actions" x > "diag/mods/$n/matches.txt" 2>/dev/null
+  # decompila le classi che corrispondono
+  rm -rf cls && mkdir cls && for c in $(grep "\.class$" "diag/mods/$n/matches.txt"); do mkdir -p "cls/$(dirname ${c#x/})"; cp "$c" "cls/${c#x/}"; done
+  java -jar vineflower.jar -dgs=1 cls "diag/mods/$n/src" > /dev/null 2>&1 || true
+  for r in $(grep -E "\.(js|json)$" "diag/mods/$n/matches.txt"); do mkdir -p "diag/mods/$n/res"; cp "$r" "diag/mods/$n/res/$(echo ${r#x/} | tr / _)"; done
+done
 # ---- server reale con Cobblemon + Mega Showdown di Cobbleverse + Mega Radar, avviato DUE volte
 D=itest; rm -rf $D; mkdir -p $D/mods
 echo "eula=true" > $D/eula.txt

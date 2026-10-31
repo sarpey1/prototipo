@@ -17,7 +17,7 @@ f = next(x for x in v["files"] if x["filename"].endswith(".mrpack"))
 pack = zipfile.ZipFile(io.BytesIO(get(f["url"])))
 index = json.loads(pack.read("modrinth.index.json"))
 lines.append(f"dependencies: {index.get('dependencies')}")
-keys = ("cobblemon", "mega_showdown", "mega-showdown", "megashowdown", "architectury", "accessories", "owo", "kotlin", "fabric-api", "fabric_api")
+keys = ("rctapi", "rctmod", "zamega", "battle-extras", "cobblemon", "mega_showdown", "mega-showdown", "megashowdown", "architectury", "accessories", "owo", "kotlin", "fabric-api", "fabric_api")
 for fe in index["files"]:
     name = fe["path"].split("/")[-1]
     if fe["path"].startswith("mods/"):
