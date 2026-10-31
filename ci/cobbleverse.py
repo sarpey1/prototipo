@@ -22,6 +22,10 @@ for fe in index["files"]:
     name = fe["path"].split("/")[-1]
     if fe["path"].startswith("mods/"):
         lines.append("mod: " + name)
+    if fe["path"].startswith("mods/") and os.environ.get("ALL_MODS"):
+        os.makedirs("allmods", exist_ok=True)
+        try: open(os.path.join("allmods", name), "wb").write(get(fe["downloads"][0]))
+        except Exception as e: lines.append("  !! download fallito " + name + " " + str(e))
     if fe["path"].startswith("mods/") and any(k in name.lower() for k in keys):
         open(os.path.join(out, name), "wb").write(get(fe["downloads"][0]))
         lines.append("  -> scaricato " + name)

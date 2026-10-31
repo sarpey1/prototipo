@@ -2,7 +2,7 @@
 # Diagnosi Mega illimitate con le versioni ESATTE di Cobbleverse. Non fallisce mai: pubblica tutto in diag/.
 set -u
 CV=${COBBLEVERSE_VERSION:-1.7.42}
-python3 ci/cobbleverse.py "$CV" cvmods > diag/cobbleverse.log 2>&1 || true
+ALL_MODS=1 python3 ci/cobbleverse.py "$CV" cvmods > diag/cobbleverse.log 2>&1 || true
 cp versions.txt diag/ 2>/dev/null || true
 ls -la cvmods > diag/cvmods.txt 2>&1 || true
 
@@ -27,6 +27,14 @@ if [ -n "$MSD" ]; then
   unzip -p "$MSD" assets/mega_showdown/showdown/battle-actions.js | grep -n "runMegaEvo(pokemon)" -A25 > diag/msd-runMegaEvo.txt 2>&1
 fi
 
+# ---- TUTTE le mod del pack: chi tocca i file del motore Showdown?
+for J in allmods/*.jar; do
+  hits=$(unzip -Z1 "$J" 2>/dev/null | grep -iE "showdown/(sim|data)/|battle-actions" | head -5)
+  rm -rf y && mkdir y && (cd y && unzip -q -o "../$J" '*.class' 2>/dev/null)
+  cls=$(grep -rlaE "battle-actions\.js|showdown/sim|runMegaEvo|copyInternalToExternal|attemptUnbundle|GraalShowdownUnbundler" y 2>/dev/null | head -5 | sed 's#^y/##')
+  [ -n "$hits$cls" ] && { echo "== $(basename $J)"; echo "$hits"; echo "$cls"; }
+done > diag/allmods-showdown-touchers.txt 2>&1
+ls allmods | wc -l >> diag/allmods-showdown-touchers.txt
 # ---- mod di Cobbleverse che toccano le battaglie: cerca riferimenti a Mega / gimmick / showdown
 for J in cvmods/rctapi*.jar cvmods/rctmod*.jar cvmods/zamega*.jar cvmods/cobblemon-battle-extras*.jar; do
   [ -f "$J" ] || continue
@@ -49,7 +57,7 @@ curl -sSL -o $D/server.jar "https://meta.fabricmc.net/v2/versions/loader/1.21.1/
 for pat in "Cobblemon-fabric" "mega_showdown" "architectury" "accessories-fabric" "accessories_compat_layer" "owo-lib" "fabric-api" "fabric-language-kotlin-1.13"; do
   cp cvmods/${pat}*.jar $D/mods/ 2>/dev/null
 done
-for f in build/libs/*.jar; do case "$f" in *-sources.jar) ;; *) cp "$f" $D/mods/ ;; esac; done
+cp ci/userjar/megaradar-1.0.2.jar $D/mods/
 ls $D/mods > diag/server-mods.txt
 for run in 1 2; do
   (cd $D && timeout 240 java -Xmx3G -Dmixin.debug.export=true -jar server.jar nogui > ../diag/server-run$run.log 2>&1 <<< "stop") &
