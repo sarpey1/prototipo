@@ -1,6 +1,7 @@
 package com.megaradar;
 
 import com.megaradar.command.RadarCommand;
+import com.megaradar.compat.UnlimitedMegas;
 import com.megaradar.config.RadarConfig;
 import com.megaradar.fuel.FuelManager;
 import com.megaradar.network.ModNetworking;
@@ -32,6 +33,7 @@ public class MegaRadar implements ModInitializer {
         ModItems.register();
         ModMenus.register();
         ModNetworking.registerPayloadTypes();
+        UnlimitedMegas.register();
 
         // Quando un giocatore entra, gli mandiamo il costo carburante deciso dal server
         // (così il tooltip lato client è sempre coerente con la config del server).

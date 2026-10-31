@@ -11,7 +11,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
@@ -31,6 +31,20 @@ jobs:
         if: success()
         run: bash ci/server-test.sh
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Unlimited megas - Showdown battle test
+        if: success()
+        run: |
+          cd ci/megatest && npm install --silent
+          node test.js ../../src/main/resources/resourcepacks/unlimited_megas/data/megaradar/mega_showdown/showdown/scripts/actions.js | tee ../../megatest.log
+
+      - name: Unlimited megas - Cobblemon + Mega Showdown server
+        if: success()
+        run: bash ci/integration-test.sh
+
       - name: GUI preview
         if: success()
         run: |
@@ -46,6 +60,7 @@ jobs:
           cp build.log /tmp/dist/ 2>/dev/null || true
           cp server-test.log /tmp/dist/ 2>/dev/null || true
           cp gui-preview.png gui-anim.gif /tmp/dist/ 2>/dev/null || true
+          cp megatest.log integration-test.log /tmp/dist/ 2>/dev/null || true
           cp run/logs/latest.log /tmp/dist/server-latest.log 2>/dev/null || true
           for f in build/libs/*.jar; do case "$f" in *-sources.jar) ;; *) cp "$f" /tmp/dist/ ;; esac; done 2>/dev/null || true
           echo "${{ github.sha }} ${{ job.status }}" > /tmp/dist/STATUS.txt
