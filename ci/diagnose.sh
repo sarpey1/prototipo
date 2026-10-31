@@ -35,6 +35,14 @@ for J in allmods/*.jar; do
   [ -n "$hits$cls" ] && { echo "== $(basename $J)"; echo "$hits"; echo "$cls"; }
 done > diag/allmods-showdown-touchers.txt 2>&1
 ls allmods | wc -l >> diag/allmods-showdown-touchers.txt
+# ---- Raid Dens: decompila tutto ciò che riguarda showdown
+RD=$(ls allmods/cobblemonraiddens*.jar | head -1)
+if [ -n "$RD" ]; then
+  rm -rf cls && mkdir cls && (cd cls && unzip -q -o "../$RD" $(unzip -Z1 "../$RD" | grep -iE "showdown.*\.class$|mixins/.*Graal.*\.class$|RaidBattle.*\.class$" | tr '\n' ' '))
+  java -jar vineflower.jar -dgs=1 cls diag/raiddens-src > /dev/null 2>&1 || true
+  unzip -Z1 "$RD" | grep -iE "showdown|\.js$|mixins\.json" > diag/raiddens-files.txt
+  mkdir -p diag/raiddens-res && for r in $(unzip -Z1 "$RD" | grep -iE "\.js$|mixins\.json$"); do unzip -p "$RD" "$r" > "diag/raiddens-res/$(echo $r | tr / _)"; done
+fi
 # ---- mod di Cobbleverse che toccano le battaglie: cerca riferimenti a Mega / gimmick / showdown
 for J in cvmods/rctapi*.jar cvmods/rctmod*.jar cvmods/zamega*.jar cvmods/cobblemon-battle-extras*.jar; do
   [ -f "$J" ] || continue
@@ -54,8 +62,8 @@ echo "eula=true" > $D/eula.txt
 printf 'online-mode=false\nlevel-seed=12345\n' > $D/server.properties
 curl -sSL -o $D/server.jar "https://meta.fabricmc.net/v2/versions/loader/1.21.1/0.17.3/1.0.3/server/jar"
 # solo le mod necessarie, alle versioni di Cobbleverse
-for pat in "Cobblemon-fabric" "mega_showdown" "architectury" "accessories-fabric" "accessories_compat_layer" "owo-lib" "fabric-api" "fabric-language-kotlin-1.13"; do
-  cp cvmods/${pat}*.jar $D/mods/ 2>/dev/null
+for pat in "Cobblemon-fabric" "mega_showdown" "architectury" "accessories-fabric" "accessories_compat_layer" "owo-lib" "fabric-api" "fabric-language-kotlin-1.13" "cobblemonraiddens" "geckolib" "cobblemon-additions"; do
+  cp allmods/${pat}*.jar $D/mods/ 2>/dev/null
 done
 cp ci/userjar/megaradar-1.0.2.jar $D/mods/
 ls $D/mods > diag/server-mods.txt
