@@ -64,5 +64,14 @@ ls -R diag-showdown/sim/cobblemon diag-showdown/data/mods 2>/dev/null | head -40
 # ---- battaglia sul motore REALE (cartella showdown generata dal server)
 if [ -d diag-showdown/sim ]; then
   node ci/real-engine-test.js diag-showdown > diag/real-engine-test.txt 2>&1 || true
+  # stesso motore, ripristinato all'originale di Mega Showdown e poi modificato dal nostro patcher
+  JAR=$(ls build/libs/*.jar | grep -v sources | head -1)
+  cp -r diag-showdown engine-orig && unzip -p cvmods/mega_showdown*.jar assets/mega_showdown/showdown/battle-actions.js > engine-orig/sim/battle-actions.js
+  node ci/real-engine-test.js engine-orig > diag/real-engine-orig.txt 2>&1 || true
+  cp -r engine-orig engine-patched
+  mkdir -p pt && (cd pt && unzip -q -o "../$JAR" 'com/megaradar/compat/*')
+  printf 'public class P { public static void main(String[] a) throws Exception { System.out.println(com.megaradar.compat.ShowdownMegaPatch.apply(java.nio.file.Path.of(a[0]), true)); } }' > pt/P.java
+  (cd pt && javac -cp . P.java 2>&1 | tail -2; java -cp . P ../engine-patched/sim/battle-actions.js) > diag/patcher-run.txt 2>&1
+  node ci/real-engine-test.js engine-patched > diag/real-engine-patched.txt 2>&1 || true
 fi
 echo done

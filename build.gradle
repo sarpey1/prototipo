@@ -15,6 +15,12 @@ loom {
     // Impedisce di usare per sbaglio classi client nel codice che gira sul server dedicato.
     splitEnvironmentSourceSets()
 
+    // I mixin puntano per nome a classi di Cobblemon / Mega Showdown che non sono nel classpath di compilazione
+    // e usano remap = false: il processore di annotazioni (refmap) non serve.
+    mixin {
+        useLegacyMixinAp = false
+    }
+
     mods {
         "megaradar" {
             sourceSet sourceSets.main
