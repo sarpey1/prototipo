@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Diagnosi Mega illimitate con le versioni ESATTE di Cobbleverse. Non fallisce mai: pubblica tutto in diag/.
 set -u
-mkdir -p diag
 CV=${COBBLEVERSE_VERSION:-1.7.42}
 python3 ci/cobbleverse.py "$CV" cvmods > diag/cobbleverse.log 2>&1 || true
 cp versions.txt diag/ 2>/dev/null || true
@@ -56,6 +55,12 @@ find $D/.mixin.out -type f | head -50 > diag/mixin-out-files.txt 2>&1
 grep -E "megaradar|Mega illimitate|Showdown|showdown|Mixin|mixin|fallback|All files" diag/server-run*.log | grep -v "^\s*at " > diag/server-relevant.txt
 cp -r $D/showdown diag-showdown 2>/dev/null || true
 
+# file del motore utili per leggere il formato delle squadre di Cobblemon
+mkdir -p diag/engine
+for f in sim/pokemon.js sim/teams.js sim/side.js sim/battle-stream.js index.js sim/cobblemon/cobblemon.js; do
+  [ -f "diag-showdown/$f" ] && cp "diag-showdown/$f" "diag/engine/$(echo $f | tr / _)"
+done
+ls -R diag-showdown/sim/cobblemon diag-showdown/data/mods 2>/dev/null | head -40 > diag/engine/listing.txt
 # ---- battaglia sul motore REALE (cartella showdown generata dal server)
 if [ -d diag-showdown/sim ]; then
   node ci/real-engine-test.js diag-showdown > diag/real-engine-test.txt 2>&1 || true

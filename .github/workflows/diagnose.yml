@@ -26,7 +26,7 @@ jobs:
           gradle-version: '8.14.3'
       - name: Build
         continue-on-error: true
-        run: gradle build --no-daemon -q
+        run: mkdir -p diag && gradle build --no-daemon --stacktrace > diag/build.log 2>&1; echo "exit $?" >> diag/build.log; ls -la build/libs >> diag/build.log 2>&1
       - name: Diagnose
         continue-on-error: true
         run: bash ci/diagnose.sh
