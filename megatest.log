@@ -1,0 +1,4 @@
+SENZA script : {"megas":["Charizard"],"errors":["|error|[Invalid choice] Can't move: Venusaur can't mega evolve","|error|[Invalid choice] Can't move: Blastoise can't mega evolve"]}
+CON script   : {"megas":["Charizard","Venusaur","Blastoise"],"errors":[]}
+dopo 3 reload: {"megas":["Charizard","Venusaur","Blastoise"],"errors":[]}
+TEST OK

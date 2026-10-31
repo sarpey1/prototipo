@@ -1,0 +1,301 @@
+Downloading Minecraft server
+Installing Fabric Loader 0.17.3(1.21.1) on the server
+Downloading required files
+Downloading library org.ow2.asm:asm:9.9
+Downloading library org.ow2.asm:asm-analysis:9.9
+Downloading library org.ow2.asm:asm-commons:9.9
+Downloading library org.ow2.asm:asm-tree:9.9
+Downloading library org.ow2.asm:asm-util:9.9
+Downloading library net.fabricmc:sponge-mixin:0.16.5+mixin.0.8.7
+Downloading library net.fabricmc:intermediary:1.21.1
+Downloading library net.fabricmc:fabric-loader:0.17.3
+Generating server launch JAR
+Unpacking 1.21.1/server-1.21.1.jar (versions:1.21.1) to versions/1.21.1/server-1.21.1.jar
+Unpacking com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar (libraries:com.github.oshi:oshi-core:6.4.10) to libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar
+Unpacking com/google/code/gson/gson/2.10.1/gson-2.10.1.jar (libraries:com.google.code.gson:gson:2.10.1) to libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar
+Unpacking com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar (libraries:com.google.guava:failureaccess:1.0.1) to libraries/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar
+Unpacking com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar (libraries:com.google.guava:guava:32.1.2-jre) to libraries/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar
+Unpacking com/mojang/authlib/6.0.54/authlib-6.0.54.jar (libraries:com.mojang:authlib:6.0.54) to libraries/com/mojang/authlib/6.0.54/authlib-6.0.54.jar
+Unpacking com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar (libraries:com.mojang:brigadier:1.3.10) to libraries/com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar
+Unpacking com/mojang/datafixerupper/8.0.16/datafixerupper-8.0.16.jar (libraries:com.mojang:datafixerupper:8.0.16) to libraries/com/mojang/datafixerupper/8.0.16/datafixerupper-8.0.16.jar
+Unpacking com/mojang/logging/1.2.7/logging-1.2.7.jar (libraries:com.mojang:logging:1.2.7) to libraries/com/mojang/logging/1.2.7/logging-1.2.7.jar
+Unpacking commons-io/commons-io/2.15.1/commons-io-2.15.1.jar (libraries:commons-io:commons-io:2.15.1) to libraries/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar
+Unpacking io/netty/netty-buffer/4.1.97.Final/netty-buffer-4.1.97.Final.jar (libraries:io.netty:netty-buffer:4.1.97.Final) to libraries/io/netty/netty-buffer/4.1.97.Final/netty-buffer-4.1.97.Final.jar
+Unpacking io/netty/netty-codec/4.1.97.Final/netty-codec-4.1.97.Final.jar (libraries:io.netty:netty-codec:4.1.97.Final) to libraries/io/netty/netty-codec/4.1.97.Final/netty-codec-4.1.97.Final.jar
+Unpacking io/netty/netty-common/4.1.97.Final/netty-common-4.1.97.Final.jar (libraries:io.netty:netty-common:4.1.97.Final) to libraries/io/netty/netty-common/4.1.97.Final/netty-common-4.1.97.Final.jar
+Unpacking io/netty/netty-handler/4.1.97.Final/netty-handler-4.1.97.Final.jar (libraries:io.netty:netty-handler:4.1.97.Final) to libraries/io/netty/netty-handler/4.1.97.Final/netty-handler-4.1.97.Final.jar
+Unpacking io/netty/netty-resolver/4.1.97.Final/netty-resolver-4.1.97.Final.jar (libraries:io.netty:netty-resolver:4.1.97.Final) to libraries/io/netty/netty-resolver/4.1.97.Final/netty-resolver-4.1.97.Final.jar
+Unpacking io/netty/netty-transport/4.1.97.Final/netty-transport-4.1.97.Final.jar (libraries:io.netty:netty-transport:4.1.97.Final) to libraries/io/netty/netty-transport/4.1.97.Final/netty-transport-4.1.97.Final.jar
+Unpacking io/netty/netty-transport-classes-epoll/4.1.97.Final/netty-transport-classes-epoll-4.1.97.Final.jar (libraries:io.netty:netty-transport-classes-epoll:4.1.97.Final) to libraries/io/netty/netty-transport-classes-epoll/4.1.97.Final/netty-transport-classes-epoll-4.1.97.Final.jar
+Unpacking io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-x86_64.jar (libraries:io.netty:netty-transport-native-epoll:4.1.97.Final:linux-x86_64) to libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-x86_64.jar
+Unpacking io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-aarch_64.jar (libraries:io.netty:netty-transport-native-epoll:4.1.97.Final:linux-aarch_64) to libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-aarch_64.jar
+Unpacking io/netty/netty-transport-native-unix-common/4.1.97.Final/netty-transport-native-unix-common-4.1.97.Final.jar (libraries:io.netty:netty-transport-native-unix-common:4.1.97.Final) to libraries/io/netty/netty-transport-native-unix-common/4.1.97.Final/netty-transport-native-unix-common-4.1.97.Final.jar
+Unpacking it/unimi/dsi/fastutil/8.5.12/fastutil-8.5.12.jar (libraries:it.unimi.dsi:fastutil:8.5.12) to libraries/it/unimi/dsi/fastutil/8.5.12/fastutil-8.5.12.jar
+Unpacking net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar (libraries:net.java.dev.jna:jna:5.14.0) to libraries/net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar
+Unpacking net/java/dev/jna/jna-platform/5.14.0/jna-platform-5.14.0.jar (libraries:net.java.dev.jna:jna-platform:5.14.0) to libraries/net/java/dev/jna/jna-platform/5.14.0/jna-platform-5.14.0.jar
+Unpacking net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar (libraries:net.sf.jopt-simple:jopt-simple:5.0.4) to libraries/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar
+Unpacking org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar (libraries:org.apache.commons:commons-lang3:3.14.0) to libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar
+Unpacking org/apache/logging/log4j/log4j-api/2.22.1/log4j-api-2.22.1.jar (libraries:org.apache.logging.log4j:log4j-api:2.22.1) to libraries/org/apache/logging/log4j/log4j-api/2.22.1/log4j-api-2.22.1.jar
+Unpacking org/apache/logging/log4j/log4j-core/2.22.1/log4j-core-2.22.1.jar (libraries:org.apache.logging.log4j:log4j-core:2.22.1) to libraries/org/apache/logging/log4j/log4j-core/2.22.1/log4j-core-2.22.1.jar
+Unpacking org/apache/logging/log4j/log4j-slf4j2-impl/2.22.1/log4j-slf4j2-impl-2.22.1.jar (libraries:org.apache.logging.log4j:log4j-slf4j2-impl:2.22.1) to libraries/org/apache/logging/log4j/log4j-slf4j2-impl/2.22.1/log4j-slf4j2-impl-2.22.1.jar
+Unpacking org/joml/joml/1.10.5/joml-1.10.5.jar (libraries:org.joml:joml:1.10.5) to libraries/org/joml/joml/1.10.5/joml-1.10.5.jar
+Unpacking org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar (libraries:org.lz4:lz4-java:1.8.0) to libraries/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar
+Unpacking org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar (libraries:org.slf4j:slf4j-api:2.0.9) to libraries/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar
+Starting net.fabricmc.loader.impl.game.minecraft.BundlerClassPathCapture
+[19:28:37] [main/INFO]: Loading Minecraft 1.21.1 with Fabric Loader 0.17.3
+[19:28:37] [main/INFO]: Fabric is preparing JARs on first launch, this may take a few seconds...
+[19:28:38] [main/INFO]: Loading 66 mods:
+	- accessories 1.1.0-beta.54+1.21.1
+	- architectury 13.0.11
+	- cobblemon 1.7.3+1.21.1
+	   \-- fabric-language-kotlin 1.13.6+kotlin.2.2.20
+	        |-- org_jetbrains_kotlin_kotlin-reflect 2.2.20
+	        |-- org_jetbrains_kotlin_kotlin-stdlib 2.2.20
+	        |-- org_jetbrains_kotlin_kotlin-stdlib-jdk7 2.2.20
+	        |-- org_jetbrains_kotlin_kotlin-stdlib-jdk8 2.2.20
+	        |-- org_jetbrains_kotlinx_atomicfu-jvm 0.29.0
+	        |-- org_jetbrains_kotlinx_kotlinx-coroutines-core-jvm 1.10.2
+	        |-- org_jetbrains_kotlinx_kotlinx-coroutines-jdk8 1.10.2
+	        |-- org_jetbrains_kotlinx_kotlinx-datetime-jvm 0.7.1
+	        |-- org_jetbrains_kotlinx_kotlinx-io-bytestring-jvm 0.8.0
+	        |-- org_jetbrains_kotlinx_kotlinx-io-core-jvm 0.8.0
+	        |-- org_jetbrains_kotlinx_kotlinx-serialization-cbor-jvm 1.9.0
+	        |-- org_jetbrains_kotlinx_kotlinx-serialization-core-jvm 1.9.0
+	        \-- org_jetbrains_kotlinx_kotlinx-serialization-json-jvm 1.9.0
+	- fabric-api 0.116.6+1.21.1
+	   |-- fabric-api-base 0.4.42+6573ed8c19
+	   |-- fabric-api-lookup-api-v1 1.6.71+b559734419
+	   |-- fabric-biome-api-v1 13.0.31+d527f9fd19
+	   |-- fabric-block-api-v1 1.1.0+0bc3503219
+	   |-- fabric-block-view-api-v2 1.0.11+ebb2264e19
+	   |-- fabric-blockrenderlayer-v1 1.1.52+0af3f5a719
+	   |-- fabric-client-tags-api-v1 1.1.15+6573ed8c19
+	   |-- fabric-command-api-v1 1.2.49+f71b366f19
+	   |-- fabric-command-api-v2 2.2.28+6ced4dd919
+	   |-- fabric-commands-v0 0.2.66+df3654b319
+	   |-- fabric-content-registries-v0 8.0.19+b559734419
+	   |-- fabric-convention-tags-v1 2.1.5+7f945d5b19
+	   |-- fabric-convention-tags-v2 2.11.1+a406e79519
+	   |-- fabric-crash-report-info-v1 0.2.29+0af3f5a719
+	   |-- fabric-data-attachment-api-v1 1.4.5+6116a37819
+	   |-- fabric-data-generation-api-v1 20.2.33+37516cd619
+	   |-- fabric-dimensions-v1 4.0.1+65213ef819
+	   |-- fabric-entity-events-v1 1.8.0+2b27e0a419
+	   |-- fabric-events-interaction-v0 0.7.13+ba9dae0619
+	   |-- fabric-game-rule-api-v1 1.0.53+6ced4dd919
+	   |-- fabric-item-api-v1 11.2.0+3b3cb2e819
+	   |-- fabric-item-group-api-v1 4.1.7+def88e3a19
+	   |-- fabric-key-binding-api-v1 1.0.47+0af3f5a719
+	   |-- fabric-keybindings-v0 0.2.45+df3654b319
+	   |-- fabric-lifecycle-events-v1 2.6.0+0865547519
+	   |-- fabric-loot-api-v2 3.0.15+3f89f5a519
+	   |-- fabric-loot-api-v3 1.0.3+3f89f5a519
+	   |-- fabric-message-api-v1 6.0.14+8aaf3aca19
+	   |-- fabric-model-loading-api-v1 2.1.0+b4d813fc19
+	   |-- fabric-networking-api-v1 4.3.0+c7469b2119
+	   |-- fabric-object-builder-api-v1 15.2.1+40875a9319
+	   |-- fabric-particles-v1 4.0.2+6573ed8c19
+	   |-- fabric-recipe-api-v1 5.0.14+248df81c19
+	   |-- fabric-registry-sync-v0 5.3.1+e3eddc2119
+	   |-- fabric-renderer-api-v1 3.4.1+b4d813fc19
+	   |-- fabric-renderer-indigo 1.7.1+c705a49c19
+	   |-- fabric-renderer-registries-v1 3.2.69+df3654b319
+	   |-- fabric-rendering-data-attachment-v1 0.3.49+73761d2e19
+	   |-- fabric-rendering-fluids-v1 3.1.6+1daea21519
+	   |-- fabric-rendering-v0 1.1.72+df3654b319
+	   |-- fabric-rendering-v1 5.1.0+ab4c25a019
+	   |-- fabric-resource-conditions-api-v1 4.3.0+8dc279b119
+	   |-- fabric-resource-loader-v0 1.3.1+5b5275af19
+	   |-- fabric-screen-api-v1 2.0.25+8b68f1c719
+	   |-- fabric-screen-handler-api-v1 1.3.90+b559734419
+	   |-- fabric-sound-api-v1 1.0.23+6573ed8c19
+	   |-- fabric-transfer-api-v1 5.4.3+c24bd99419
+	   \-- fabric-transitive-access-wideners-v1 6.2.0+45b9699719
+	- fabricloader 0.17.3
+	   \-- mixinextras 0.5.0
+	- java 21
+	- mega_showdown 1.9.9+1.7.3+1.21.1
+	- megaradar 1.0.0
+	- minecraft 1.21.1
+	- owo 0.13.0-alpha.15+1.21
+	   |-- blue_endless_jankson 1.2.2
+	   |-- io_wispforest_endec 0.1.5.1
+	   |-- io_wispforest_endec_gson 0.1.3.1
+	   |-- io_wispforest_endec_jankson 0.1.3.1
+	   \-- io_wispforest_endec_netty 0.1.2
+[19:28:38] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/home/runner/work/prototipo/prototipo/itest/libraries/net/fabricmc/sponge-mixin/0.16.5+mixin.0.8.7/sponge-mixin-0.16.5+mixin.0.8.7.jar Service=Knot/Fabric Env=SERVER
+[19:28:38] [main/INFO]: Compatibility level set to JAVA_17
+[19:28:38] [main/INFO]: Compatibility level set to JAVA_21
+[19:28:38] [main/WARN]: Error loading class: net/minecraft/class_4224 (java.lang.ClassNotFoundException: net/minecraft/class_4224)
+[19:28:38] [main/WARN]: @Mixin target net.minecraft.class_4224 was not found mixins.cobblemon-common.json:ChannelMixin from mod cobblemon
+[19:28:38] [main/WARN]: Error loading class: juuxel/adorn/block/variant/BlockVariantSets (java.lang.ClassNotFoundException: juuxel/adorn/block/variant/BlockVariantSets)
+[19:28:38] [main/WARN]: @Mixin target juuxel.adorn.block.variant.BlockVariantSets was not found mixins.cobblemon-common.json:invoker.AdornRegisterInvoker from mod cobblemon
+[19:28:38] [main/WARN]: Error loading class: net/minecraft/class_1140 (java.lang.ClassNotFoundException: net/minecraft/class_1140)
+[19:28:38] [main/WARN]: @Mixin target net.minecraft.class_1140 was not found mixins.cobblemon-fabric.json:FabricSoundEngineMixin from mod cobblemon
+[19:28:39] [main/WARN]: Error loading class: xyz/nucleoid/server/translations/impl/language/LanguageReader (java.lang.ClassNotFoundException: xyz/nucleoid/server/translations/impl/language/LanguageReader)
+[19:28:39] [main/WARN]: @Mixin target xyz.nucleoid.server.translations.impl.language.LanguageReader was not found owo.mixins.json:extension.json5.LanguageReaderMixin from mod owo
+[19:28:39] [main/WARN]: Error loading class: xyz/nucleoid/server/translations/impl/language/SystemDelegatedLanguage (java.lang.ClassNotFoundException: xyz/nucleoid/server/translations/impl/language/SystemDelegatedLanguage)
+[19:28:39] [main/WARN]: Error loading class: net/minecraft/class_1044 (java.lang.ClassNotFoundException: net/minecraft/class_1044)
+[19:28:39] [main/WARN]: @Mixin target net.minecraft.class_1044 was not found owo.mixins.json:ui.access.AbstractTextureAccessor from mod owo
+[19:28:39] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+[19:28:45] [main/INFO]: Registering Listeners!
+[19:28:45] [main/WARN]: Error loading class: net/minecraft/class_1132 (java.lang.ClassNotFoundException: net/minecraft/class_1132)
+[19:28:45] [main/INFO]: Booting LaxPermissionValidator, permissions will be checked using Minecrafts permission level system, see https://minecraft.fandom.com/wiki/Permission_level
+[19:28:45] [main/INFO]: Launching Cobblemon 1.7.3 
+[19:28:47] [main/ERROR]: No data fixer registered for cobblemon:pokemon
+[19:28:47] [main/ERROR]: No data fixer registered for cobblemon:empty_pokeball
+[19:28:47] [main/ERROR]: No data fixer registered for cobblemon:boat
+[19:28:47] [main/ERROR]: No data fixer registered for cobblemon:chest_boat
+[19:28:47] [main/ERROR]: No data fixer registered for cobblemon:poke_bobber
+[19:28:47] [main/ERROR]: No data fixer registered for cobblemon:generic_bedrock
+[19:28:47] [main/ERROR]: No data fixer registered for cobblemon:npc
+[19:28:47] [main/INFO]: Starting the Best Spawner...
+[19:28:47] [main/INFO]: Loaded 7 spawning condition types.
+[19:28:47] [main/INFO]: Loaded 6 spawnable position types.
+[19:28:47] [main/INFO]: Loaded 3 spawn detail types.
+[19:28:47] [Cobblemon Showdown/INFO]: Starting showdown service...
+[19:28:48] [Cobblemon Showdown/INFO]: MegaShowdown config not found, creating default.
+[19:28:48] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/moves.js
+[19:28:48] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/battle-actions.js
+[19:28:48] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/battle.js
+[19:28:48] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/pokemon.js
+[19:28:48] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/abilities.js
+[19:28:48] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/side.js
+[19:28:48] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/conditions.js
+[19:28:48] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/index.js
+[19:28:48] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/items.js
+[19:28:48] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/conditions.js
+[19:28:48] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/typechart.js
+[19:28:48] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/moves.js
+[19:28:48] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/abilities.js
+[19:28:48] [Cobblemon Showdown/INFO]: All files are ready!
+[19:28:50] [Cobblemon Showdown/INFO]: Showdown has been started!
+[19:28:50] [main/INFO]: Note: Cobblemon data registries are only loaded once per server instance as Pokémon species are not safe to reload.
+[19:28:50] [main/INFO]: Registered the mega_showdown:mega_showdown/custom_status registry
+[19:28:50] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/moves registry
+[19:28:50] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/ability registry
+[19:28:50] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/conditions registry
+[19:28:50] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/held_items registry
+[19:28:50] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/typecharts registry
+[19:28:50] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/scripts registry
+[19:28:50] [main/INFO]: Registered the cobblemon:molang registry
+[19:28:50] [main/INFO]: Registered the cobblemon:species_features registry
+[19:28:50] [main/INFO]: Registered the cobblemon:global_species_features registry
+[19:28:50] [main/INFO]: Registered the cobblemon:species_feature_assignments registry
+[19:28:50] [main/INFO]: Registered the cobblemon:action_effects registry
+[19:28:50] [main/INFO]: Registered the cobblemon:moves registry
+[19:28:50] [main/INFO]: Registered the cobblemon:abilities registry
+[19:28:50] [main/INFO]: Registered the cobblemon:behaviours registry
+[19:28:50] [main/INFO]: Registered the cobblemon:species registry
+[19:28:50] [main/INFO]: Registered the cobblemon:species_additions registry
+[19:28:50] [main/INFO]: Registered the cobblemon:pokeballs registry
+[19:28:50] [main/INFO]: Registered the cobblemon:properties_tab_completion registry
+[19:28:50] [main/INFO]: Registered the cobblemon:spawn_detail_presets registry
+[19:28:50] [main/INFO]: Registered the cobblemon:spawn_rules registry
+[19:28:50] [main/INFO]: Registered the cobblemon:mechanics registry
+[19:28:50] [main/INFO]: Registered the cobblemon:bag_items registry
+[19:28:50] [main/INFO]: Registered the cobblemon:held_items registry
+[19:28:50] [main/INFO]: Registered the cobblemon:dialogues registry
+[19:28:50] [main/INFO]: Registered the cobblemon:natural_materials registry
+[19:28:50] [main/INFO]: Registered the cobblemon:fossils registry
+[19:28:50] [main/INFO]: Registered the cobblemon:npc_preset registry
+[19:28:50] [main/INFO]: Registered the cobblemon:npc registry
+[19:28:50] [main/INFO]: Registered the cobblemon:dex_entries registry
+[19:28:50] [main/INFO]: Registered the cobblemon:dex_entry_additions registry
+[19:28:50] [main/INFO]: Registered the cobblemon:dexes registry
+[19:28:50] [main/INFO]: Registered the cobblemon:dex_additions registry
+[19:28:50] [main/INFO]: Registered the cobblemon:cosmetic_items registry
+[19:28:50] [main/INFO]: Registered the cobblemon:callbacks registry
+[19:28:50] [main/INFO]: Registered the cobblemon:unlockable_pc_box_wallpapers registry
+[19:28:50] [main/INFO]: Registered the cobblemon:marks registry
+[19:28:50] [main/INFO]: Registered the cobblemon:starters registry
+[19:28:50] [main/INFO]: Registered the cobblemon:spawn_pool_world registry
+[19:28:50] [main/INFO]: Registered the cobblemon:pokerods registry
+[19:28:50] [main/INFO]: Registered the cobblemon:berries registry
+[19:28:50] [main/INFO]: Registered the cobblemon:seasonings registry
+[19:28:50] [main/INFO]: Registered the cobblemon:pokemon_interactions registry
+[19:28:50] [main/INFO]: Registered the cobblemon:spawn_bait_effects registry
+[19:28:50] [main/INFO]: Registered the cobblemon:ride_settings registry
+[19:28:50] [main/INFO]: Registering C2S receiver with id mega_showdown:mega_evo
+[19:28:50] [main/INFO]: Registering C2S receiver with id mega_showdown:primal_evo
+[19:28:50] [main/INFO]: Registering C2S receiver with id mega_showdown:crown
+[19:28:50] [main/INFO]: Registering C2S receiver with id mega_showdown:ultra_burst
+[19:28:50] [main/INFO]: Registering C2S receiver with id mega_showdown:secret_sword_move_swap
+[19:28:50] [main/INFO]: Config Mega Radar caricata da ./config/megaradar.json
+[19:28:50] [main/INFO]: Mega Radar inizializzato.
+[19:28:50] [main/INFO]: Maybe we take a page out of the Wisp Forest handbook: When in doubt, steal glisco's code
+[19:28:50] [main/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[19:28:51] [main/INFO]: No existing world data, creating new world
+[19:28:52] [main/INFO]: Loaded 2283 recipes
+[19:28:52] [main/INFO]: Loaded 2395 advancements
+[19:28:52] [main/INFO]: Loaded custom elemental statuses
+[19:28:54] [main/INFO]: Loaded 10 server scripts and 1 client scripts
+[19:28:56] [main/INFO]: Loaded 936 moves
+[19:28:56] [main/INFO]: Loaded 320 abilities
+[19:28:56] [main/INFO]: Loaded 48 entity behaviours
+[19:28:57] [main/INFO]: Finished additions
+[19:28:58] [cobblemon Datafixer Bootstrap/INFO]: 4 Datafixer optimizations took 37 milliseconds
+[19:28:59] [main/INFO]: Loaded 1025 Pokémon species
+[19:28:59] [main/INFO]: Loaded 28 spawn detail presets.
+[19:28:59] [main/INFO]: Starting dummy Showdown battle to force it to pre-load data.
+[19:28:59] [main/INFO]: Imported 266 held item IDs from showdown
+[19:28:59] [main/INFO]: Loaded 15 fossils
+[19:29:00] [main/ERROR]: Invalid path in mod resource-pack cobblemon: cobblemon:dex_entry_additions/README.md, ignoring
+[19:29:00] [main/ERROR]: Invalid path in mod resource-pack cobblemon: cobblemon:dex_additions/README.md, ignoring
+[19:29:00] [main/INFO]: Loaded 6 callbacks and 0 client callbacks
+[19:29:00] [main/INFO]: Loaded 168 marks
+[19:29:01] [main/INFO]: Loaded 70 berries
+[19:29:01] [main/INFO]: Loaded 137 Pokémon interaction sets
+[19:29:03] [main/INFO]: Applied 617 biome modifications to 64 of 64 new biomes in 23.69 ms
+[19:29:03] [Server thread/INFO]: Starting minecraft server version 1.21.1
+[19:29:03] [Server thread/INFO]: Loading properties
+[19:29:03] [Server thread/INFO]: Default game type: SURVIVAL
+[19:29:03] [Server thread/INFO]: Generating keypair
+[19:29:03] [Server thread/INFO]: Starting Minecraft server on *:25565
+[19:29:03] [Server thread/INFO]: Using epoll channel type
+[19:29:03] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[19:29:03] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[19:29:03] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[19:29:03] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[19:29:03] [Server thread/INFO]: Preparing level "world"
+[19:29:10] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[19:29:10] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[19:29:10] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[19:29:11] [Worker-Main-1/INFO]: Preparing spawn area: 2%
+[19:29:11] [Worker-Main-1/INFO]: Preparing spawn area: 2%
+[19:29:12] [Worker-Main-3/INFO]: Preparing spawn area: 4%
+[19:29:12] [Worker-Main-2/INFO]: Preparing spawn area: 18%
+[19:29:13] [Worker-Main-1/INFO]: Preparing spawn area: 18%
+[19:29:13] [Worker-Main-2/INFO]: Preparing spawn area: 18%
+[19:29:14] [Worker-Main-3/INFO]: Preparing spawn area: 18%
+[19:29:14] [Worker-Main-3/INFO]: Preparing spawn area: 51%
+[19:29:15] [Worker-Main-2/INFO]: Preparing spawn area: 51%
+[19:29:15] [Worker-Main-1/INFO]: Preparing spawn area: 51%
+[19:29:16] [Worker-Main-3/INFO]: Preparing spawn area: 51%
+[19:29:16] [Server thread/INFO]: Time elapsed: 6249 ms
+[19:29:16] [Server thread/INFO]: Done (12.825s)! For help, type "help"
+[19:29:16] [Server thread/INFO]: Optimizing spawn pools...
+[19:29:16] [Server thread/INFO]: Mega Showdown trovato: supporto Mega illimitate pronto
+[19:29:16] [Server thread/INFO]: Mega illimitate attive: multipleMegas di Mega Showdown impostato a true
+[19:29:17] [Server thread/WARN]: Skipping Entity with id cobblemon_pokemon_entity_placeholder
+[19:29:21] [Server thread/INFO]: There are 8 data pack(s) enabled: [vanilla (built-in)], [fabric (Fabric mod)], [accessories (Fabric mod)], [cobblemon (Fabric mod)], [fabric-convention-tags-v2 (Fabric mod)], [mega_showdown (Fabric mod)], [megaradar (Fabric mod)], [megaradar:unlimited_megas (built-in: Mega Radar)]
+[19:29:21] [Server thread/INFO]: [megaradar] debugscan mega_showdown:megaroid: 3 risultati in 47 ms
+[19:29:21] [Server thread/INFO]: [megaradar]   X 80 Z 608 (640 blocchi)
+[19:29:21] [Server thread/INFO]: [megaradar]   X 768 Z -336 (737 blocchi)
+[19:29:21] [Server thread/INFO]: [megaradar]   X 864 Z 112 (781 blocchi)
+[19:29:21] [Server thread/INFO]: [megaradar] debugscan mega_showdown:mega_site: 3 risultati in 12 ms
+[19:29:21] [Server thread/INFO]: [megaradar]   X 704 Z 176 (642 blocchi)
+[19:29:21] [Server thread/INFO]: [megaradar]   X 720 Z -192 (644 blocchi)
+[19:29:21] [Server thread/INFO]: [megaradar]   X -688 Z 96 (794 blocchi)
+[19:29:25] [Server thread/WARN]: Skipping Entity with id cobblemon_pokemon_entity_placeholder
+[19:30:01] [Server thread/INFO]: Stopping the server
+[19:30:01] [Server thread/INFO]: Stopping server
+[19:30:01] [Server thread/INFO]: Saving players
+[19:30:01] [Server thread/INFO]: Saving worlds
+[19:30:01] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[19:30:02] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[19:30:02] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[19:30:02] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[19:30:02] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[19:30:02] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[19:30:02] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved

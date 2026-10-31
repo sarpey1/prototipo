@@ -1,0 +1,37 @@
+Mod da Modrinth:
+  Cobblemon-fabric-1.7.3+1.21.1.jar
+  mega_showdown-fabric-1.9.9+1.7.3+1.21.1.jar
+  owo-lib-0.13.0-alpha.15+1.21.jar
+  architectury-13.0.11-fabric.jar
+  accessories-fabric-1.1.0-beta.54+1.21.1.jar
+Cobblemon-fabric-1.7.3+1.21.1.jar
+accessories-fabric-1.1.0-beta.54+1.21.1.jar
+architectury-13.0.11-fabric.jar
+fabric-api.jar
+mega_showdown-fabric-1.9.9+1.7.3+1.21.1.jar
+megaradar-1.0.0.jar
+owo-lib-0.13.0-alpha.15+1.21.jar
+	- megaradar 1.0.0
+[19:28:47] [main/ERROR]: No data fixer registered for cobblemon:pokemon
+[19:28:47] [main/ERROR]: No data fixer registered for cobblemon:empty_pokeball
+[19:28:47] [main/ERROR]: No data fixer registered for cobblemon:boat
+[19:28:47] [main/ERROR]: No data fixer registered for cobblemon:chest_boat
+[19:28:47] [main/ERROR]: No data fixer registered for cobblemon:poke_bobber
+[19:28:47] [main/ERROR]: No data fixer registered for cobblemon:generic_bedrock
+[19:28:47] [main/ERROR]: No data fixer registered for cobblemon:npc
+[19:28:50] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/scripts registry
+[19:28:50] [main/INFO]: Config Mega Radar caricata da ./config/megaradar.json
+[19:29:00] [main/ERROR]: Invalid path in mod resource-pack cobblemon: cobblemon:dex_entry_additions/README.md, ignoring
+[19:29:00] [main/ERROR]: Invalid path in mod resource-pack cobblemon: cobblemon:dex_additions/README.md, ignoring
+[19:29:16] [Server thread/INFO]: Mega Showdown trovato: supporto Mega illimitate pronto
+[19:29:16] [Server thread/INFO]: Mega illimitate attive: multipleMegas di Mega Showdown impostato a true
+[19:29:21] [Server thread/INFO]: There are 8 data pack(s) enabled: [vanilla (built-in)], [fabric (Fabric mod)], [accessories (Fabric mod)], [cobblemon (Fabric mod)], [fabric-convention-tags-v2 (Fabric mod)], [mega_showdown (Fabric mod)], [megaradar (Fabric mod)], [megaradar:unlimited_megas (built-in: Mega Radar)]
+[19:29:21] [Server thread/INFO]: [megaradar] debugscan mega_showdown:megaroid: 3 risultati in 47 ms
+[19:29:21] [Server thread/INFO]: [megaradar]   X 80 Z 608 (640 blocchi)
+[19:29:21] [Server thread/INFO]: [megaradar]   X 768 Z -336 (737 blocchi)
+[19:29:21] [Server thread/INFO]: [megaradar]   X 864 Z 112 (781 blocchi)
+[19:29:21] [Server thread/INFO]: [megaradar] debugscan mega_showdown:mega_site: 3 risultati in 12 ms
+[19:29:21] [Server thread/INFO]: [megaradar]   X 704 Z 176 (642 blocchi)
+[19:29:21] [Server thread/INFO]: [megaradar]   X 720 Z -192 (644 blocchi)
+[19:29:21] [Server thread/INFO]: [megaradar]   X -688 Z 96 (794 blocchi)
+INTEGRATION TEST OK
