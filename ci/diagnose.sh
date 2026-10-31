@@ -33,14 +33,14 @@ D=itest; rm -rf $D; mkdir -p $D/mods
 echo "eula=true" > $D/eula.txt
 printf 'online-mode=false\nlevel-seed=12345\n' > $D/server.properties
 curl -sSL -o $D/server.jar "https://meta.fabricmc.net/v2/versions/loader/1.21.1/0.17.3/1.0.3/server/jar"
-cp cvmods/*.jar $D/mods/ 2>/dev/null
-ls $D/mods | grep -qi "fabric-api" || curl -sSL -o $D/mods/fabric-api.jar "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/0.116.6+1.21.1/fabric-api-0.116.6+1.21.1.jar"
-# dipendenze mancanti (se il pack le chiama diversamente)
-python3 ci/modrinth.py deps-extra "fabric-language-kotlin" >/dev/null 2>&1 && cp deps-extra/*.jar $D/mods/ 2>/dev/null
+# solo le mod necessarie, alle versioni di Cobbleverse
+for pat in "Cobblemon-fabric" "mega_showdown" "architectury" "accessories-fabric" "accessories_compat_layer" "owo-lib" "fabric-api" "fabric-language-kotlin-1.13"; do
+  cp cvmods/${pat}*.jar $D/mods/ 2>/dev/null
+done
 for f in build/libs/*.jar; do case "$f" in *-sources.jar) ;; *) cp "$f" $D/mods/ ;; esac; done
 ls $D/mods > diag/server-mods.txt
 for run in 1 2; do
-  (cd $D && timeout 240 java -Xmx3G -jar server.jar nogui > ../diag/server-run$run.log 2>&1 <<< "stop") &
+  (cd $D && timeout 240 java -Xmx3G -Dmixin.debug.export=true -jar server.jar nogui > ../diag/server-run$run.log 2>&1 <<< "stop") &
   pid=$!
   for i in $(seq 1 44); do grep -q "Done (" diag/server-run$run.log 2>/dev/null && break; sleep 5; done
   sleep 15
@@ -49,7 +49,11 @@ for run in 1 2; do
     grep -n "runMegaEvo(pokemon)" -A14 $D/showdown/sim/battle-actions.js | head -40; } >> diag/showdown-state.txt 2>&1
   wait $pid || true
 done
-grep -E "megaradar|Mega illimitate|Showdown|showdown|Mixin|mixin" diag/server-run*.log | grep -v "^\s*at " > diag/server-relevant.txt
+# classi trasformate dai mixin: ordine delle iniezioni in attemptUnbundle
+U=$(find $D/.mixin.out -name "GraalShowdownUnbundler.class" 2>/dev/null | head -1)
+[ -n "$U" ] && javap -c -p "$U" | grep -n "attemptUnbundle\|invokevirtual\|invokestatic\|invokespecial" | grep -iE "attemptUnbundle|handler|megaradar|mega_showdown|beforeShowdown|CallbackInfo|\$" > diag/unbundler-injections.txt 2>&1
+find $D/.mixin.out -type f | head -50 > diag/mixin-out-files.txt 2>&1
+grep -E "megaradar|Mega illimitate|Showdown|showdown|Mixin|mixin|fallback|All files" diag/server-run*.log | grep -v "^\s*at " > diag/server-relevant.txt
 cp -r $D/showdown diag-showdown 2>/dev/null || true
 
 # ---- battaglia sul motore REALE (cartella showdown generata dal server)
