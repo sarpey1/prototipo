@@ -65,7 +65,7 @@ curl -sSL -o $D/server.jar "https://meta.fabricmc.net/v2/versions/loader/1.21.1/
 for pat in "Cobblemon-fabric" "mega_showdown" "architectury" "accessories-fabric" "accessories_compat_layer" "owo-lib" "fabric-api" "fabric-language-kotlin-1.13" "cobblemonraiddens" "geckolib" "cobblemon-additions"; do
   cp allmods/${pat}*.jar $D/mods/ 2>/dev/null
 done
-cp ci/userjar/megaradar-1.0.2.jar $D/mods/
+JAR=$(ls build/libs/*.jar | grep -v sources | head -1); cp "$JAR" $D/mods/ && cp "$JAR" diag/
 ls $D/mods > diag/server-mods.txt
 for run in 1 2; do
   (cd $D && timeout 240 java -Xmx3G -Dmixin.debug.export=true -jar server.jar nogui > ../diag/server-run$run.log 2>&1 <<< "stop") &

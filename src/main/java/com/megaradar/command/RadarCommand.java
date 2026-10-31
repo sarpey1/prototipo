@@ -56,6 +56,14 @@ public final class RadarCommand {
                                         throw e;
                                     }
                                 })))
+                .then(Commands.literal("megas")
+                        .executes(ctx -> {
+                            ctx.getSource().sendSuccess(() -> com.megaradar.compat.UnlimitedMegas.statusMessage(ctx.getSource().getServer()), false);
+                            ctx.getSource().sendSuccess(() -> Component.literal("File motore: "
+                                    + com.megaradar.compat.ShowdownMegaPatch.ENGINE_FILE.toAbsolutePath()
+                                    + " | stato: " + com.megaradar.compat.ShowdownMegaPatch.status()), false);
+                            return 1;
+                        }))
                 .then(Commands.literal("reset")
                         .executes(ctx -> reset(ctx.getSource(), ctx.getSource().getPlayerOrException()))
                         .then(Commands.argument("player", EntityArgument.player())

@@ -3,6 +3,8 @@ package com.megaradar.compat;
 import com.megaradar.MegaRadar;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
+import net.minecraft.ChatFormatting;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
 import net.fabricmc.fabric.api.resource.ResourcePackActivationType;
 import net.fabricmc.loader.api.FabricLoader;
@@ -47,11 +49,49 @@ public final class UnlimitedMegas {
         if (!ok) MegaRadar.LOGGER.warn("Impossibile registrare il datapack {}", PACK_ID);
 
         // Mega Showdown può (ri)caricare la sua config in qualsiasi momento: ricontrolliamo spesso, costa nulla.
-        ServerLifecycleEvents.SERVER_STARTED.register(UnlimitedMegas::sync);
+        ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+            sync(server);
+            if (field() != null) MegaRadar.LOGGER.info("Mega illimitate - stato motore Showdown: {} ({})",
+                    ShowdownMegaPatch.status(), ShowdownMegaPatch.ENGINE_FILE.toAbsolutePath());
+        });
+        // Messaggio in chat all'ingresso: dice subito se le Mega illimitate sono attive
+        ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
+            if (field() != null) handler.getPlayer().sendSystemMessage(statusMessage(server));
+        });
         ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, rm, success) -> sync(server));
         ServerTickEvents.END_SERVER_TICK.register(server -> {
             if (server.getTickCount() % CHECK_EVERY_TICKS == 0) sync(server);
         });
+    }
+
+    /** Una riga di stato, usata all'ingresso e da /megaradar megas. */
+    public static Component statusMessage(MinecraftServer server) {
+        if (field() == null) {
+            return Component.literal("[Mega Radar] Mega Showdown non trovato: Mega illimitate non disponibili")
+                    .withStyle(ChatFormatting.GRAY);
+        }
+        boolean keyStoneOk = isMultipleMegasOn();
+        return switch (ShowdownMegaPatch.status()) {
+            case ACTIVE -> keyStoneOk
+                    ? Component.literal("[Mega Radar] Mega illimitate ATTIVE: in battaglia puoi megaevolvere tutti i Pokémon con la loro Mega Pietra")
+                        .withStyle(ChatFormatting.GREEN)
+                    : Component.literal("[Mega Radar] Motore OK, ma multipleMegas di Mega Showdown è spento: il tasto Mega può sparire")
+                        .withStyle(ChatFormatting.GOLD);
+            case NOT_PATCHED -> Component.literal("[Mega Radar] Mega illimitate NON attive: il file del motore è stato sovrascritto. Riavvia il gioco; se il messaggio resta, mandami logs/latest.log")
+                    .withStyle(ChatFormatting.RED);
+            case NO_FILE -> Component.literal("[Mega Radar] Mega illimitate NON attive: non trovo " + ShowdownMegaPatch.ENGINE_FILE.toAbsolutePath())
+                    .withStyle(ChatFormatting.RED);
+            case DISABLED -> Component.literal("[Mega Radar] Mega illimitate disattivate da config/megaradar_megas.json")
+                    .withStyle(ChatFormatting.GRAY);
+        };
+    }
+
+    private static boolean isMultipleMegasOn() {
+        try {
+            return field() != null && field().getBoolean(null);
+        } catch (IllegalAccessException e) {
+            return false;
+        }
     }
 
     public static boolean isPackEnabled(MinecraftServer server) {

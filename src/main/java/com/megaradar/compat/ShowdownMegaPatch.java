@@ -49,8 +49,8 @@ public final class ShowdownMegaPatch implements PreLaunchEntrypoint {
     public static synchronized void applyNow(String when) {
         Logger log = LoggerFactory.getLogger("megaradar");
         try {
-            boolean enabled = readEnabled(Path.of("config", "megaradar_megas.json"));
-            Path file = Path.of("showdown", "sim", "battle-actions.js");
+            boolean enabled = readEnabled(CONFIG_FILE);
+            Path file = ENGINE_FILE;
             Result r = apply(file, enabled);
             switch (r) {
                 case PATCHED -> log.info("Mega illimitate: motore Showdown modificato " + when + " (" + file.toAbsolutePath() + ")");
@@ -62,6 +62,22 @@ public final class ShowdownMegaPatch implements PreLaunchEntrypoint {
             }
         } catch (Throwable t) {
             log.error("Mega illimitate: impossibile modificare il motore Showdown", t);
+        }
+    }
+
+    public enum Status { ACTIVE, NOT_PATCHED, NO_FILE, DISABLED }
+
+    public static final Path ENGINE_FILE = Path.of("showdown", "sim", "battle-actions.js");
+    public static final Path CONFIG_FILE = Path.of("config", "megaradar_megas.json");
+
+    /** Stato attuale della modifica sul motore Showdown (per il messaggio in chat e /megaradar megas). */
+    public static Status status() {
+        try {
+            if (!readEnabled(CONFIG_FILE)) return Status.DISABLED;
+            if (!Files.exists(ENGINE_FILE)) return Status.NO_FILE;
+            return Files.readString(ENGINE_FILE, StandardCharsets.UTF_8).contains(MARK) ? Status.ACTIVE : Status.NOT_PATCHED;
+        } catch (IOException e) {
+            return Status.NO_FILE;
         }
     }
 
