@@ -64,11 +64,29 @@ public final class RadarCommand {
                                     + " | stato: " + com.megaradar.compat.ShowdownMegaPatch.status()), false);
                             return 1;
                         }))
+                .then(Commands.literal("megatest")
+                        .executes(ctx -> probe(ctx.getSource(), "megatest", com.megaradar.compat.ShowdownProbe.MEGA_TEST_JS)))
+                .then(Commands.literal("megastate")
+                        .executes(ctx -> probe(ctx.getSource(), "megastate", com.megaradar.compat.ShowdownProbe.MEGA_STATE_JS)))
                 .then(Commands.literal("reset")
                         .executes(ctx -> reset(ctx.getSource(), ctx.getSource().getPlayerOrException()))
                         .then(Commands.argument("player", EntityArgument.player())
                                 .requires(src -> src.hasPermission(2))
                                 .executes(ctx -> reset(ctx.getSource(), EntityArgument.getPlayer(ctx, "player"))))));
+    }
+
+    /** Esegue una sonda nel motore Showdown; il risultato arriva in chat e nel log (logs/latest.log). */
+    private static int probe(CommandSourceStack source, String name, String js) {
+        source.sendSuccess(() -> Component.literal("[megaradar] " + name + ": interrogo il motore di battaglia..."), false);
+        var server = source.getServer();
+        com.megaradar.compat.ShowdownProbe.run(js, result -> server.execute(() -> {
+            com.megaradar.MegaRadar.LOGGER.info("[megaradar] {}: {}", name, result);
+            for (int i = 0; i < result.length(); i += 240) {
+                String part = result.substring(i, Math.min(result.length(), i + 240));
+                source.sendSuccess(() -> Component.literal(part), false);
+            }
+        }));
+        return 1;
     }
 
     /** Prova la scansione su una struttura qualsiasi (es. minecraft:village_plains), senza carburante. */

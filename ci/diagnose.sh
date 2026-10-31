@@ -86,13 +86,20 @@ done
 JAR=$(ls build/libs/*.jar | grep -v sources | head -1); cp "$JAR" $D/mods/ && cp "$JAR" diag/
 ls $D/mods > diag/server-mods.txt
 for run in 1 2; do
-  (cd $D && timeout 240 java -Xmx3G -Dmixin.debug.export=true -jar server.jar nogui > ../diag/server-run$run.log 2>&1 <<< "stop") &
+  rm -f $D/console && mkfifo $D/console
+  (cd $D && timeout 300 java -Xmx3G -jar server.jar nogui < console > ../diag/server-run$run.log 2>&1) &
   pid=$!
-  for i in $(seq 1 44); do grep -q "Done (" diag/server-run$run.log 2>/dev/null && break; sleep 5; done
-  sleep 15
-  { echo "== run $run"; ls -la --time-style=full-iso $D/showdown $D/showdown/sim 2>&1 | head -60;
-    echo "-- marker:"; grep -c "megaradar:unlimited-megas" $D/showdown/sim/battle-actions.js;
-    grep -n "runMegaEvo(pokemon)" -A14 $D/showdown/sim/battle-actions.js | head -40; } >> diag/showdown-state.txt 2>&1
+  exec 3>$D/console
+  for i in $(seq 1 50); do grep -q "Done (" diag/server-run$run.log 2>/dev/null && break; sleep 5; done
+  sleep 5
+  echo "megaradar megatest" >&3
+  sleep 10
+  echo "megaradar megastate" >&3
+  sleep 5
+  { echo "== run $run"; ls -la --time-style=full-iso $D/showdown/sim 2>&1 | grep battle-actions;
+    echo "-- marker:"; grep -c "megaradar:unlimited-megas" $D/showdown/sim/battle-actions.js; } >> diag/showdown-state.txt 2>&1
+  echo "stop" >&3
+  exec 3>&-
   wait $pid || true
 done
 # classi trasformate dai mixin: ordine delle iniezioni in attemptUnbundle
