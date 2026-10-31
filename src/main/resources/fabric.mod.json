@@ -4,13 +4,22 @@
   "version": "${version}",
   "name": "Mega Radar",
   "description": "Due radar alimentati a minerali per localizzare Megaroidi e Megasite (Mega Showdown) senza impazzire.",
-  "authors": ["Tu"],
+  "authors": [
+    "Tu"
+  ],
   "license": "MIT",
   "icon": "assets/megaradar/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": ["com.megaradar.MegaRadar"],
-    "client": ["com.megaradar.client.MegaRadarClient"]
+    "main": [
+      "com.megaradar.MegaRadar"
+    ],
+    "client": [
+      "com.megaradar.client.MegaRadarClient"
+    ],
+    "preLaunch": [
+      "com.megaradar.compat.ShowdownMegaPatch"
+    ]
   },
   "depends": {
     "fabricloader": ">=0.16.0",
@@ -21,5 +30,8 @@
   "suggests": {
     "mega_showdown": "*",
     "cobblemon": "*"
-  }
+  },
+  "mixins": [
+    "megaradar.mixins.json"
+  ]
 }

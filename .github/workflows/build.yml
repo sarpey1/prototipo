@@ -1,8 +1,6 @@
 name: Build Mega Radar
 
 on:
-  push:
-    branches: [megaradar-build]
   workflow_dispatch:
 
 permissions:
