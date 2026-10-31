@@ -92,7 +92,10 @@ for run in 1 2; do
   exec 3>$D/console
   for i in $(seq 1 50); do grep -q "Done (" diag/server-run$run.log 2>/dev/null && break; sleep 5; done
   sleep 5
+  mkdir -p $D/config && cp ci/probe-scenarios.js $D/config/megaradar_probe.js
   echo "megaradar megatest" >&3
+  sleep 5
+  echo "megaradar megaeval" >&3
   sleep 10
   echo "megaradar megastate" >&3
   sleep 5

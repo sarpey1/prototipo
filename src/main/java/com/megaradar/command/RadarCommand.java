@@ -66,6 +66,18 @@ public final class RadarCommand {
                         }))
                 .then(Commands.literal("megatest")
                         .executes(ctx -> probe(ctx.getSource(), "megatest", com.megaradar.compat.ShowdownProbe.MEGA_TEST_JS)))
+                .then(Commands.literal("megaeval")
+                        .requires(src -> src.hasPermission(2))
+                        .executes(ctx -> {
+                            String js;
+                            try {
+                                js = java.nio.file.Files.readString(java.nio.file.Path.of("config", "megaradar_probe.js"));
+                            } catch (java.io.IOException e) {
+                                ctx.getSource().sendFailure(Component.literal("Manca config/megaradar_probe.js"));
+                                return 0;
+                            }
+                            return probe(ctx.getSource(), "megaeval", js);
+                        }))
                 .then(Commands.literal("megastate")
                         .executes(ctx -> probe(ctx.getSource(), "megastate", com.megaradar.compat.ShowdownProbe.MEGA_STATE_JS)))
                 .then(Commands.literal("reset")
