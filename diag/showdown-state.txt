@@ -1,0 +1,156 @@
+== run 1
+itest/showdown:
+total 52
+drwxr-xr-x  9 runner runner 4096 2026-10-31 21:43:07.056273934 +0000 .
+drwxr-xr-x 11 runner runner 4096 2026-10-31 21:43:23.039223178 +0000 ..
+-rw-r--r--  1 runner runner   19 2026-10-31 21:43:07.056273934 +0000 MSDPatch.json
+drwxr-xr-x  2 runner runner 4096 2026-10-31 21:43:06.641274724 +0000 config
+drwxr-xr-x  4 runner runner 4096 2026-10-31 21:43:07.054273938 +0000 data
+-rw-r--r--  1 runner runner 5513 2026-10-31 21:43:07.055273936 +0000 index.js
+drwxr-xr-x  2 runner runner 4096 2026-10-31 21:43:06.970274098 +0000 lib
+drwxr-xr-x  8 runner runner 4096 2026-10-31 21:43:07.016274010 +0000 server
+-rw-r--r--  1 runner runner   24 2026-10-31 21:43:06.638274730 +0000 showdown.json
+drwxr-xr-x  5 runner runner 4096 2026-10-31 21:43:07.054273938 +0000 sim
+drwxr-xr-x  4 runner runner 4096 2026-10-31 21:43:07.029273985 +0000 tools
+drwxr-xr-x 14 runner runner 4096 2026-10-31 21:43:07.043273959 +0000 translations
+
+itest/showdown/sim:
+total 1720
+drwxr-xr-x 5 runner runner   4096 2026-10-31 21:43:07.054273938 +0000 .
+drwxr-xr-x 9 runner runner   4096 2026-10-31 21:43:07.056273934 +0000 ..
+-rw-r--r-- 1 runner runner  80180 2026-10-31 21:43:07.065273917 +0000 battle-actions.js
+-rw-r--r-- 1 runner runner 123587 2026-10-31 21:43:07.018274006 +0000 battle-actions.js.map
+-rw-r--r-- 1 runner runner   9675 2026-10-31 21:43:07.018274006 +0000 battle-queue.js
+-rw-r--r-- 1 runner runner  18666 2026-10-31 21:43:07.018274006 +0000 battle-queue.js.map
+-rw-r--r-- 1 runner runner  12209 2026-10-31 21:43:07.018274006 +0000 battle-stream.js
+-rw-r--r-- 1 runner runner  20915 2026-10-31 21:43:07.018274006 +0000 battle-stream.js.map
+-rw-r--r-- 1 runner runner 107277 2026-10-31 21:43:07.052273941 +0000 battle.js
+-rw-r--r-- 1 runner runner 187486 2026-10-31 21:43:07.020274002 +0000 battle.js.map
+drwxr-xr-x 2 runner runner   4096 2026-10-31 21:43:07.021274000 +0000 cobblemon
+-rw-r--r-- 1 runner runner   3720 2026-10-31 21:43:07.021274000 +0000 dex-abilities.js
+-rw-r--r-- 1 runner runner   6606 2026-10-31 21:43:07.021274000 +0000 dex-abilities.js.map
+-rw-r--r-- 1 runner runner   3283 2026-10-31 21:43:07.021274000 +0000 dex-conditions.js
+-rw-r--r-- 1 runner runner  43463 2026-10-31 21:43:07.021274000 +0000 dex-conditions.js.map
+-rw-r--r-- 1 runner runner   7824 2026-10-31 21:43:07.021274000 +0000 dex-data.js
+-rw-r--r-- 1 runner runner  17487 2026-10-31 21:43:07.021274000 +0000 dex-data.js.map
+-rw-r--r-- 1 runner runner  33320 2026-10-31 21:43:07.021274000 +0000 dex-formats.js
+-rw-r--r-- 1 runner runner  61873 2026-10-31 21:43:07.022273999 +0000 dex-formats.js.map
+-rw-r--r-- 1 runner runner   4505 2026-10-31 21:43:07.022273999 +0000 dex-items.js
+-rw-r--r-- 1 runner runner  10226 2026-10-31 21:43:07.022273999 +0000 dex-items.js.map
+-rw-r--r-- 1 runner runner   7951 2026-10-31 21:43:07.022273999 +0000 dex-moves.js
+-rw-r--r-- 1 runner runner  30681 2026-10-31 21:43:07.022273999 +0000 dex-moves.js.map
+-rw-r--r-- 1 runner runner  17365 2026-10-31 21:43:07.022273999 +0000 dex-species.js
+-rw-r--r-- 1 runner runner  39027 2026-10-31 21:43:07.023273997 +0000 dex-species.js.map
+-rw-r--r-- 1 runner runner  17943 2026-10-31 21:43:07.023273997 +0000 dex.js
+-rw-r--r-- 1 runner runner  30777 2026-10-31 21:43:07.023273997 +0000 dex.js.map
+drwxr-xr-x 2 runner runner   4096 2026-10-31 21:43:07.023273997 +0000 examples
+-rw-r--r-- 1 runner runner   8358 2026-10-31 21:43:07.023273997 +0000 field.js
+-rw-r--r-- 1 runner runner  13409 2026-10-31 21:43:07.023273997 +0000 field.js.map
+-rw-r--r-- 1 runner runner   2110 2026-10-31 21:43:07.024273995 +0000 index.js
+-rw-r--r-- 1 runner runner   1015 2026-10-31 21:43:07.024273995 +0000 index.js.map
+-rw-r--r-- 1 runner runner  62718 2026-10-31 21:43:07.024273995 +0000 pokemon.js
+-rw-r--r-- 1 runner runner 121494 2026-10-31 21:43:07.025273993 +0000 pokemon.js.map
+-rw-r--r-- 1 runner runner  65097 2026-10-31 21:43:07.053273940 +0000 pokemons.js
+-rw-r--r-- 1 runner runner   5783 2026-10-31 21:43:07.025273993 +0000 prng.js
+-rw-r--r-- 1 runner runner   8817 2026-10-31 21:43:07.025273993 +0000 prng.js.map
+-rw-r--r-- 1 runner runner  37333 2026-10-31 21:43:07.054273938 +0000 side.js
+-rw-r--r-- 1 runner runner  64698 2026-10-31 21:43:07.025273993 +0000 side.js.map
+-rw-r--r-- 1 runner runner  13845 2026-10-31 21:43:07.025273993 +0000 state.js
+-rw-r--r-- 1 runner runner  28530 2026-10-31 21:43:07.026273991 +0000 state.js.map
+-rw-r--r-- 1 runner runner  97940 2026-10-31 21:43:07.026273991 +0000 team-validator.js
+-rw-r--r-- 1 runner runner 174344 2026-10-31 21:43:07.027273989 +0000 team-validator.js.map
+-- marker:
+1
+2390:  runMegaEvo(pokemon) { /* megaradar:unlimited-megas */
+2391-    const side = pokemon.side;
+2392-    const wasMega = !!pokemon.canMegaEvo;
+2393-    const saved = side.pokemon.filter((p) => p !== pokemon).map((p) => [p, p.canMegaEvo]);
+2394-    const result = this.__megaradarOriginalRunMegaEvo(pokemon);
+2395-    if (result && wasMega) {
+2396-      if ("hasMegaEvolved" in side) side.hasMegaEvolved = false;
+2397-      for (const [ally, canMega] of saved) ally.canMegaEvo = canMega;
+2398-      try { console.log("[megaradar] Mega illimitate: " + pokemon.name + " si e' megaevoluto, gli altri possono ancora farlo"); } catch (e) {}
+2399-    }
+2400-    return result;
+2401-  }
+2402-  __megaradarOriginalRunMegaEvo(pokemon) {
+2403-    const speciesid = pokemon.canMegaEvo || pokemon.canUltraBurst;
+2404-    if (!speciesid) return false;
+== run 2
+itest/showdown:
+total 52
+drwxr-xr-x  9 runner runner 4096 2026-10-31 21:43:07.056273934 +0000 .
+drwxr-xr-x 11 runner runner 4096 2026-10-31 21:43:23.039223178 +0000 ..
+-rw-r--r--  1 runner runner   19 2026-10-31 21:43:07.056273934 +0000 MSDPatch.json
+drwxr-xr-x  2 runner runner 4096 2026-10-31 21:43:06.641274724 +0000 config
+drwxr-xr-x  4 runner runner 4096 2026-10-31 21:43:07.054273938 +0000 data
+-rw-r--r--  1 runner runner 5513 2026-10-31 21:43:07.055273936 +0000 index.js
+drwxr-xr-x  2 runner runner 4096 2026-10-31 21:43:06.970274098 +0000 lib
+drwxr-xr-x  8 runner runner 4096 2026-10-31 21:43:07.016274010 +0000 server
+-rw-r--r--  1 runner runner   24 2026-10-31 21:43:06.638274730 +0000 showdown.json
+drwxr-xr-x  5 runner runner 4096 2026-10-31 21:43:07.054273938 +0000 sim
+drwxr-xr-x  4 runner runner 4096 2026-10-31 21:43:07.029273985 +0000 tools
+drwxr-xr-x 14 runner runner 4096 2026-10-31 21:43:07.043273959 +0000 translations
+
+itest/showdown/sim:
+total 1720
+drwxr-xr-x 5 runner runner   4096 2026-10-31 21:43:07.054273938 +0000 .
+drwxr-xr-x 9 runner runner   4096 2026-10-31 21:43:07.056273934 +0000 ..
+-rw-r--r-- 1 runner runner  80180 2026-10-31 21:43:07.065273917 +0000 battle-actions.js
+-rw-r--r-- 1 runner runner 123587 2026-10-31 21:43:07.018274006 +0000 battle-actions.js.map
+-rw-r--r-- 1 runner runner   9675 2026-10-31 21:43:07.018274006 +0000 battle-queue.js
+-rw-r--r-- 1 runner runner  18666 2026-10-31 21:43:07.018274006 +0000 battle-queue.js.map
+-rw-r--r-- 1 runner runner  12209 2026-10-31 21:43:07.018274006 +0000 battle-stream.js
+-rw-r--r-- 1 runner runner  20915 2026-10-31 21:43:07.018274006 +0000 battle-stream.js.map
+-rw-r--r-- 1 runner runner 107277 2026-10-31 21:43:07.052273941 +0000 battle.js
+-rw-r--r-- 1 runner runner 187486 2026-10-31 21:43:07.020274002 +0000 battle.js.map
+drwxr-xr-x 2 runner runner   4096 2026-10-31 21:43:07.021274000 +0000 cobblemon
+-rw-r--r-- 1 runner runner   3720 2026-10-31 21:43:07.021274000 +0000 dex-abilities.js
+-rw-r--r-- 1 runner runner   6606 2026-10-31 21:43:07.021274000 +0000 dex-abilities.js.map
+-rw-r--r-- 1 runner runner   3283 2026-10-31 21:43:07.021274000 +0000 dex-conditions.js
+-rw-r--r-- 1 runner runner  43463 2026-10-31 21:43:07.021274000 +0000 dex-conditions.js.map
+-rw-r--r-- 1 runner runner   7824 2026-10-31 21:43:07.021274000 +0000 dex-data.js
+-rw-r--r-- 1 runner runner  17487 2026-10-31 21:43:07.021274000 +0000 dex-data.js.map
+-rw-r--r-- 1 runner runner  33320 2026-10-31 21:43:07.021274000 +0000 dex-formats.js
+-rw-r--r-- 1 runner runner  61873 2026-10-31 21:43:07.022273999 +0000 dex-formats.js.map
+-rw-r--r-- 1 runner runner   4505 2026-10-31 21:43:07.022273999 +0000 dex-items.js
+-rw-r--r-- 1 runner runner  10226 2026-10-31 21:43:07.022273999 +0000 dex-items.js.map
+-rw-r--r-- 1 runner runner   7951 2026-10-31 21:43:07.022273999 +0000 dex-moves.js
+-rw-r--r-- 1 runner runner  30681 2026-10-31 21:43:07.022273999 +0000 dex-moves.js.map
+-rw-r--r-- 1 runner runner  17365 2026-10-31 21:43:07.022273999 +0000 dex-species.js
+-rw-r--r-- 1 runner runner  39027 2026-10-31 21:43:07.023273997 +0000 dex-species.js.map
+-rw-r--r-- 1 runner runner  17943 2026-10-31 21:43:07.023273997 +0000 dex.js
+-rw-r--r-- 1 runner runner  30777 2026-10-31 21:43:07.023273997 +0000 dex.js.map
+drwxr-xr-x 2 runner runner   4096 2026-10-31 21:43:07.023273997 +0000 examples
+-rw-r--r-- 1 runner runner   8358 2026-10-31 21:43:07.023273997 +0000 field.js
+-rw-r--r-- 1 runner runner  13409 2026-10-31 21:43:07.023273997 +0000 field.js.map
+-rw-r--r-- 1 runner runner   2110 2026-10-31 21:43:07.024273995 +0000 index.js
+-rw-r--r-- 1 runner runner   1015 2026-10-31 21:43:07.024273995 +0000 index.js.map
+-rw-r--r-- 1 runner runner  62718 2026-10-31 21:43:07.024273995 +0000 pokemon.js
+-rw-r--r-- 1 runner runner 121494 2026-10-31 21:43:07.025273993 +0000 pokemon.js.map
+-rw-r--r-- 1 runner runner  65097 2026-10-31 21:43:07.053273940 +0000 pokemons.js
+-rw-r--r-- 1 runner runner   5783 2026-10-31 21:43:07.025273993 +0000 prng.js
+-rw-r--r-- 1 runner runner   8817 2026-10-31 21:43:07.025273993 +0000 prng.js.map
+-rw-r--r-- 1 runner runner  37333 2026-10-31 21:43:07.054273938 +0000 side.js
+-rw-r--r-- 1 runner runner  64698 2026-10-31 21:43:07.025273993 +0000 side.js.map
+-rw-r--r-- 1 runner runner  13845 2026-10-31 21:43:07.025273993 +0000 state.js
+-rw-r--r-- 1 runner runner  28530 2026-10-31 21:43:07.026273991 +0000 state.js.map
+-rw-r--r-- 1 runner runner  97940 2026-10-31 21:43:07.026273991 +0000 team-validator.js
+-rw-r--r-- 1 runner runner 174344 2026-10-31 21:43:07.027273989 +0000 team-validator.js.map
+-- marker:
+1
+2390:  runMegaEvo(pokemon) { /* megaradar:unlimited-megas */
+2391-    const side = pokemon.side;
+2392-    const wasMega = !!pokemon.canMegaEvo;
+2393-    const saved = side.pokemon.filter((p) => p !== pokemon).map((p) => [p, p.canMegaEvo]);
+2394-    const result = this.__megaradarOriginalRunMegaEvo(pokemon);
+2395-    if (result && wasMega) {
+2396-      if ("hasMegaEvolved" in side) side.hasMegaEvolved = false;
+2397-      for (const [ally, canMega] of saved) ally.canMegaEvo = canMega;
+2398-      try { console.log("[megaradar] Mega illimitate: " + pokemon.name + " si e' megaevoluto, gli altri possono ancora farlo"); } catch (e) {}
+2399-    }
+2400-    return result;
+2401-  }
+2402-  __megaradarOriginalRunMegaEvo(pokemon) {
+2403-    const speciesid = pokemon.canMegaEvo || pokemon.canUltraBurst;
+2404-    if (!speciesid) return false;

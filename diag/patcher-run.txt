@@ -1,0 +1,4 @@
+  class file for net.fabricmc.loader.api.entrypoint.PreLaunchEntrypoint not found
+1 error
+Error: Could not find or load main class P
+Caused by: java.lang.ClassNotFoundException: P

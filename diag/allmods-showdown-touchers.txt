@@ -1,0 +1,16 @@
+== Cobblemon-fabric-1.7.3+1.21.1.jar
+
+com/cobblemon/mod/common/util/FileUtils.class
+com/cobblemon/mod/common/battles/runner/graal/GraalShowdownUnbundler$ShowdownMetadata.class
+com/cobblemon/mod/common/battles/runner/graal/GraalShowdownUnbundler.class
+com/cobblemon/mod/common/battles/runner/graal/GraalShowdownService.class
+== cobblemonraiddens-fabric-0.11.3+1.21.1.jar
+
+com/necro/raid/dens/fabric/mixins/showdown/GraalShowdownUnbundlerMixin.class
+com/necro/raid/dens/common/showdown/loader/ShowdownLoader.class
+com/necro/raid/dens/common/showdown/events/ShowdownEvents$MegaEvolveShowdownEvent.class
+== mega_showdown-fabric-1.8.4+1.7.3+1.21.1.jar
+assets/mega_showdown/showdown/battle-actions.js
+com/github/yajatkaul/mega_showdown/utils/LoadShowdown.class
+com/github/yajatkaul/mega_showdown/mixin/GraalShowdownUnbundlerMixin.class
+136

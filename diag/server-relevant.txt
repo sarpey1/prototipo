@@ -1,0 +1,151 @@
+diag/server-run1.log:Downloading library net.fabricmc:sponge-mixin:0.16.5+mixin.0.8.7
+diag/server-run1.log:	   \-- mixinsquared 0.3.4
+diag/server-run1.log:	   \-- mixinextras 0.5.0
+diag/server-run1.log:	- mega_showdown 1.8.4+1.7.3+1.21.1
+diag/server-run1.log:	- megaradar 1.0.3
+diag/server-run1.log:[21:42:55] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/home/runner/work/prototipo/prototipo/itest/libraries/net/fabricmc/sponge-mixin/0.16.5+mixin.0.8.7/sponge-mixin-0.16.5+mixin.0.8.7.jar Service=Knot/Fabric Env=SERVER
+diag/server-run1.log:/*                                         Code source : file:/home/runner/work/prototipo/prototipo/itest/libraries/net/fabricmc/sponge-mixin/0.16.5+mixin.0.8.7/sponge-mixin-0.16.5+mixin.0.8.7.jar */
+diag/server-run1.log:/*                                 Mixin Service Class : net.fabricmc.loader.impl.launch.knot.MixinServiceKnot                                                                                       */
+diag/server-run1.log:/*                                 Logger Adapter Type : Fabric Mixin Logger                                                                                                                         */
+diag/server-run1.log:/*                                         mixin.debug : <false>                                                                                                                                     */
+diag/server-run1.log:/*                                  mixin.debug.export : - <true>                                                                                                                                    */
+diag/server-run1.log:/*                           mixin.debug.export.filter : - - <null>                                                                                                                                  */
+diag/server-run1.log:/*                        mixin.debug.export.decompile : - - <true>                                                                                                                                  */
+diag/server-run1.log:/*                  mixin.debug.export.decompile.async : - - - <true>                                                                                                                                */
+diag/server-run1.log:/* mixin.debug.export.decompile.mergeGenericSignatures : - - - <true>                                                                                                                                */
+diag/server-run1.log:/*                                  mixin.debug.verify : - <false>                                                                                                                                   */
+diag/server-run1.log:/*                                 mixin.debug.verbose : - <false>                                                                                                                                   */
+diag/server-run1.log:/*                         mixin.debug.countInjections : - <false>                                                                                                                                   */
+diag/server-run1.log:/*                                  mixin.debug.strict : - <false>                                                                                                                                   */
+diag/server-run1.log:/*                           mixin.debug.strict.unique : - - <false>                                                                                                                                 */
+diag/server-run1.log:/*                          mixin.debug.strict.targets : - - <false>                                                                                                                                 */
+diag/server-run1.log:/*                                mixin.debug.profiler : - <false>                                                                                                                                   */
+diag/server-run1.log:/*                           mixin.dumpTargetOnFailure : <false>                                                                                                                                     */
+diag/server-run1.log:/*                                        mixin.checks : <false>                                                                                                                                     */
+diag/server-run1.log:/*                             mixin.checks.interfaces : - <false>                                                                                                                                   */
+diag/server-run1.log:/*                      mixin.checks.interfaces.strict : - - <false>                                                                                                                                 */
+diag/server-run1.log:/*                             mixin.ignoreConstraints : <false>                                                                                                                                     */
+diag/server-run1.log:/*                                       mixin.hotSwap : <false>                                                                                                                                     */
+diag/server-run1.log:/*                                       mixin.env.obf : - <false>                                                                                                                                   */
+diag/server-run1.log:/*                             mixin.env.disableRefMap : - <false>                                                                                                                                   */
+diag/server-run1.log:/*                               mixin.env.remapRefMap : - <false>                                                                                                                                   */
+diag/server-run1.log:/*                       mixin.env.refMapRemappingFile : - <>                                                                                                                                        */
+diag/server-run1.log:/*                        mixin.env.refMapRemappingEnv : - <searge>                                                                                                                                  */
+diag/server-run1.log:/*                      mixin.env.allowPermissiveMatch : - <false>                                                                                                                                   */
+diag/server-run1.log:/*                            mixin.env.ignoreRequired : - <false>                                                                                                                                   */
+diag/server-run1.log:/*                               mixin.env.compatLevel : - <false>                                                                                                                                   */
+diag/server-run1.log:/*                          mixin.env.shiftByViolation : - <warn>                                                                                                                                    */
+diag/server-run1.log:/*                      mixin.initialiserInjectionMode : <default>                                                                                                                                   */
+diag/server-run1.log:/*               mixin.tunable.classReaderExpandFrames : - <false>                                                                                                                                   */
+diag/server-run1.log:[21:42:56] [main/WARN]: Reference map 'geckolib.refmap.json' for geckolib.mixins.json could not be read. If this is a development environment you can ignore this message
+diag/server-run1.log:[21:42:56] [main/WARN]: @Mixin target net.minecraft.class_4224 was not found mixins.cobblemon-common.json:ChannelMixin from mod cobblemon
+diag/server-run1.log:[21:42:56] [main/WARN]: @Mixin target juuxel.adorn.block.variant.BlockVariantSets was not found mixins.cobblemon-common.json:invoker.AdornRegisterInvoker from mod cobblemon
+diag/server-run1.log:[21:42:56] [main/WARN]: @Mixin target net.minecraft.class_1140 was not found mixins.cobblemon-fabric.json:FabricSoundEngineMixin from mod cobblemon
+diag/server-run1.log:[21:42:56] [main/WARN]: Error loading class: com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher (java.lang.ClassNotFoundException: com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher)
+diag/server-run1.log:[21:42:56] [main/WARN]: @Mixin target com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher was not found megaradar.mixins.json:MsdShowdownPatcherMixin from mod megaradar
+diag/server-run1.log:[21:42:56] [main/WARN]: @Mixin target net.minecraft.class_287 was not found owo.mixins.json:BufferBuilderAccessor from mod owo
+diag/server-run1.log:[21:42:56] [main/WARN]: @Mixin target net.minecraft.class_437 was not found owo.mixins.json:ScreenAccessor from mod owo
+diag/server-run1.log:[21:42:56] [main/INFO]: Mega illimitate: /home/runner/work/prototipo/prototipo/itest/showdown/sim/battle-actions.js non esiste ancora (all'avvio)
+diag/server-run1.log:[21:42:56] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+diag/server-run1.log:[21:43:06] [Cobblemon Showdown/INFO]: Starting showdown service...
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: MegaShowdown config not found, creating default.
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/moves.js
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/battle-actions.js
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/battle.js
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/pokemons.js
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/abilities.js
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/side.js
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/conditions.js
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/index.js
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/items.js
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/conditions.js
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/typechart.js
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/moves.js
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/abilities.js
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: All files are ready!
+diag/server-run1.log:[21:43:07] [Cobblemon Showdown/INFO]: Mega illimitate: motore Showdown modificato dopo l'estrazione di Cobblemon (/home/runner/work/prototipo/prototipo/itest/showdown/sim/battle-actions.js)
+diag/server-run1.log:[21:43:08] [Cobblemon Showdown/INFO]: Showdown has been started!
+diag/server-run1.log:[21:43:08] [main/INFO]: Registered the mega_showdown:mega_showdown/custom_status registry
+diag/server-run1.log:[21:43:08] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/moves registry
+diag/server-run1.log:[21:43:08] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/ability registry
+diag/server-run1.log:[21:43:08] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/conditions registry
+diag/server-run1.log:[21:43:08] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/held_items registry
+diag/server-run1.log:[21:43:08] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/typecharts registry
+diag/server-run1.log:[21:43:08] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/scripts registry
+diag/server-run1.log:[21:43:09] [main/INFO]: Registering C2S receiver with id mega_showdown:mega_evo
+diag/server-run1.log:[21:43:09] [main/INFO]: Registering C2S receiver with id mega_showdown:ultra_burst
+diag/server-run1.log:[21:43:09] [main/INFO]: Registering C2S receiver with id mega_showdown:secret_sword_move_swap
+diag/server-run1.log:[21:43:09] [main/INFO]: Config Mega Radar caricata da ./config/megaradar.json
+diag/server-run1.log:[21:43:18] [main/INFO]: Starting dummy Showdown battle to force it to pre-load data.
+diag/server-run1.log:[21:43:19] [main/INFO]: Imported 266 held item IDs from showdown
+diag/server-run1.log:[21:43:37] [Server thread/INFO]: Mega Showdown trovato: supporto Mega illimitate pronto
+diag/server-run1.log:[21:43:37] [Server thread/INFO]: Mega illimitate attive: multipleMegas di Mega Showdown impostato a true
+diag/server-run1.log:[21:43:37] [Server thread/INFO]: Mega illimitate - stato motore Showdown: ACTIVE (/home/runner/work/prototipo/prototipo/itest/showdown/sim/battle-actions.js)
+diag/server-run2.log:	   \-- mixinsquared 0.3.4
+diag/server-run2.log:	   \-- mixinextras 0.5.0
+diag/server-run2.log:	- mega_showdown 1.8.4+1.7.3+1.21.1
+diag/server-run2.log:	- megaradar 1.0.3
+diag/server-run2.log:[21:43:55] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/home/runner/work/prototipo/prototipo/itest/libraries/net/fabricmc/sponge-mixin/0.16.5+mixin.0.8.7/sponge-mixin-0.16.5+mixin.0.8.7.jar Service=Knot/Fabric Env=SERVER
+diag/server-run2.log:/*                                         Code source : file:/home/runner/work/prototipo/prototipo/itest/libraries/net/fabricmc/sponge-mixin/0.16.5+mixin.0.8.7/sponge-mixin-0.16.5+mixin.0.8.7.jar */
+diag/server-run2.log:/*                                 Mixin Service Class : net.fabricmc.loader.impl.launch.knot.MixinServiceKnot                                                                                       */
+diag/server-run2.log:/*                                 Logger Adapter Type : Fabric Mixin Logger                                                                                                                         */
+diag/server-run2.log:/*                                         mixin.debug : <false>                                                                                                                                     */
+diag/server-run2.log:/*                                  mixin.debug.export : - <true>                                                                                                                                    */
+diag/server-run2.log:/*                           mixin.debug.export.filter : - - <null>                                                                                                                                  */
+diag/server-run2.log:/*                        mixin.debug.export.decompile : - - <true>                                                                                                                                  */
+diag/server-run2.log:/*                  mixin.debug.export.decompile.async : - - - <true>                                                                                                                                */
+diag/server-run2.log:/* mixin.debug.export.decompile.mergeGenericSignatures : - - - <true>                                                                                                                                */
+diag/server-run2.log:/*                                  mixin.debug.verify : - <false>                                                                                                                                   */
+diag/server-run2.log:/*                                 mixin.debug.verbose : - <false>                                                                                                                                   */
+diag/server-run2.log:/*                         mixin.debug.countInjections : - <false>                                                                                                                                   */
+diag/server-run2.log:/*                                  mixin.debug.strict : - <false>                                                                                                                                   */
+diag/server-run2.log:/*                           mixin.debug.strict.unique : - - <false>                                                                                                                                 */
+diag/server-run2.log:/*                          mixin.debug.strict.targets : - - <false>                                                                                                                                 */
+diag/server-run2.log:/*                                mixin.debug.profiler : - <false>                                                                                                                                   */
+diag/server-run2.log:/*                           mixin.dumpTargetOnFailure : <false>                                                                                                                                     */
+diag/server-run2.log:/*                                        mixin.checks : <false>                                                                                                                                     */
+diag/server-run2.log:/*                             mixin.checks.interfaces : - <false>                                                                                                                                   */
+diag/server-run2.log:/*                      mixin.checks.interfaces.strict : - - <false>                                                                                                                                 */
+diag/server-run2.log:/*                             mixin.ignoreConstraints : <false>                                                                                                                                     */
+diag/server-run2.log:/*                                       mixin.hotSwap : <false>                                                                                                                                     */
+diag/server-run2.log:/*                                       mixin.env.obf : - <false>                                                                                                                                   */
+diag/server-run2.log:/*                             mixin.env.disableRefMap : - <false>                                                                                                                                   */
+diag/server-run2.log:/*                               mixin.env.remapRefMap : - <false>                                                                                                                                   */
+diag/server-run2.log:/*                       mixin.env.refMapRemappingFile : - <>                                                                                                                                        */
+diag/server-run2.log:/*                        mixin.env.refMapRemappingEnv : - <searge>                                                                                                                                  */
+diag/server-run2.log:/*                      mixin.env.allowPermissiveMatch : - <false>                                                                                                                                   */
+diag/server-run2.log:/*                            mixin.env.ignoreRequired : - <false>                                                                                                                                   */
+diag/server-run2.log:/*                               mixin.env.compatLevel : - <false>                                                                                                                                   */
+diag/server-run2.log:/*                          mixin.env.shiftByViolation : - <warn>                                                                                                                                    */
+diag/server-run2.log:/*                      mixin.initialiserInjectionMode : <default>                                                                                                                                   */
+diag/server-run2.log:/*               mixin.tunable.classReaderExpandFrames : - <false>                                                                                                                                   */
+diag/server-run2.log:[21:43:55] [main/WARN]: Reference map 'geckolib.refmap.json' for geckolib.mixins.json could not be read. If this is a development environment you can ignore this message
+diag/server-run2.log:[21:43:56] [main/WARN]: @Mixin target net.minecraft.class_4224 was not found mixins.cobblemon-common.json:ChannelMixin from mod cobblemon
+diag/server-run2.log:[21:43:56] [main/WARN]: @Mixin target juuxel.adorn.block.variant.BlockVariantSets was not found mixins.cobblemon-common.json:invoker.AdornRegisterInvoker from mod cobblemon
+diag/server-run2.log:[21:43:56] [main/WARN]: @Mixin target net.minecraft.class_1140 was not found mixins.cobblemon-fabric.json:FabricSoundEngineMixin from mod cobblemon
+diag/server-run2.log:[21:43:56] [main/WARN]: Error loading class: com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher (java.lang.ClassNotFoundException: com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher)
+diag/server-run2.log:[21:43:56] [main/WARN]: @Mixin target com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher was not found megaradar.mixins.json:MsdShowdownPatcherMixin from mod megaradar
+diag/server-run2.log:[21:43:56] [main/WARN]: @Mixin target net.minecraft.class_287 was not found owo.mixins.json:BufferBuilderAccessor from mod owo
+diag/server-run2.log:[21:43:56] [main/WARN]: @Mixin target net.minecraft.class_437 was not found owo.mixins.json:ScreenAccessor from mod owo
+diag/server-run2.log:[21:43:56] [main/INFO]: Mega illimitate: motore Showdown già modificato (all'avvio)
+diag/server-run2.log:[21:43:56] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+diag/server-run2.log:[21:44:05] [Cobblemon Showdown/INFO]: Starting showdown service...
+diag/server-run2.log:[21:44:05] [Cobblemon Showdown/INFO]: Showdown files are up to date (v1.0.0).
+diag/server-run2.log:[21:44:05] [Cobblemon Showdown/INFO]: Mega illimitate: motore Showdown già modificato (dopo l'estrazione di Cobblemon)
+diag/server-run2.log:[21:44:07] [Cobblemon Showdown/INFO]: Showdown has been started!
+diag/server-run2.log:[21:44:07] [main/INFO]: Registered the mega_showdown:mega_showdown/custom_status registry
+diag/server-run2.log:[21:44:07] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/moves registry
+diag/server-run2.log:[21:44:07] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/ability registry
+diag/server-run2.log:[21:44:07] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/conditions registry
+diag/server-run2.log:[21:44:07] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/held_items registry
+diag/server-run2.log:[21:44:07] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/typecharts registry
+diag/server-run2.log:[21:44:07] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/scripts registry
+diag/server-run2.log:[21:44:08] [main/INFO]: Registering C2S receiver with id mega_showdown:mega_evo
+diag/server-run2.log:[21:44:08] [main/INFO]: Registering C2S receiver with id mega_showdown:ultra_burst
+diag/server-run2.log:[21:44:08] [main/INFO]: Registering C2S receiver with id mega_showdown:secret_sword_move_swap
+diag/server-run2.log:[21:44:08] [main/INFO]: Config Mega Radar caricata da ./config/megaradar.json
+diag/server-run2.log:[21:44:15] [main/INFO]: Starting dummy Showdown battle to force it to pre-load data.
+diag/server-run2.log:[21:44:16] [main/INFO]: Imported 266 held item IDs from showdown
+diag/server-run2.log:[21:44:24] [Server thread/INFO]: Mega Showdown trovato: supporto Mega illimitate pronto
+diag/server-run2.log:[21:44:24] [Server thread/INFO]: Mega illimitate attive: multipleMegas di Mega Showdown impostato a true
+diag/server-run2.log:[21:44:24] [Server thread/INFO]: Mega illimitate - stato motore Showdown: ACTIVE (/home/runner/work/prototipo/prototipo/itest/showdown/sim/battle-actions.js)
