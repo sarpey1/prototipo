@@ -35,6 +35,24 @@ for J in allmods/*.jar; do
   [ -n "$hits$cls" ] && { echo "== $(basename $J)"; echo "$hits"; echo "$cls"; }
 done > diag/allmods-showdown-touchers.txt 2>&1
 ls allmods | wc -l >> diag/allmods-showdown-touchers.txt
+# ---- chi tocca la Mega lato Java/Kotlin in TUTTE le mod (escluse le classi di Cobblemon stesso)
+mkdir -p diag/mega-touchers
+for J in allmods/*.jar; do
+  rm -rf y && mkdir y && (cd y && unzip -q -o "../$J" '*.class' '*.mixins.json' '*mixins*.json' 2>/dev/null)
+  m=$(grep -rlaE "canMegaEvo|blockGimmick|MEGA_EVOLUTION|setCanMegaEvo|getCanMegaEvo|key_stone" y 2>/dev/null | grep -v "^y/com/cobblemon/mod/common/" | sed 's#^y/##')
+  if [ -n "$m" ]; then
+    n=$(basename "$J" .jar); echo "== $n"; echo "$m"
+    rm -rf cls && mkdir cls && for c in $m; do case "$c" in *.class) mkdir -p "cls/$(dirname $c)"; cp "y/$c" "cls/$c";; esac; done
+    java -jar vineflower.jar -dgs=1 cls "diag/mega-touchers/$n" > /dev/null 2>&1 || true
+  fi
+done > diag/mega-touchers.txt 2>&1
+# tutti i mixin di Mega Showdown 1.8.4 + deserializzazione delle richieste in Cobblemon
+M=$(ls allmods/mega_showdown*.jar | head -1)
+unzip -p "$M" $(unzip -Z1 "$M" | grep -E "mixins\.json$") > diag/msd-mixins.json 2>/dev/null
+rm -rf cls && mkdir cls && (cd cls && unzip -q -o "../$M" $(unzip -Z1 "../$M" | grep -E "/mixin/.*\.class$" | tr '\n' ' '))
+java -jar vineflower.jar -dgs=1 cls diag/msd-mixins-src > /dev/null 2>&1 || true
+rm -rf cls && mkdir cls && (cd cls && unzip -q -o "../$COB" $(unzip -Z1 "../$COB" | grep -E "(ShowdownMovesetAdapter|ShowdownActionRequest|BattleMoveSelection|BattleActionSelection|PlayerBattleActor|BattleActor|ShowdownInterpreter|MegaEvolution|BattleMegaEvolution).*\.class$" | tr '\n' ' '))
+java -jar vineflower.jar -dgs=1 cls diag/cobblemon-src2 > /dev/null 2>&1 || true
 # ---- Raid Dens: decompila tutto ciò che riguarda showdown
 RD=$(ls allmods/cobblemonraiddens*.jar | head -1)
 if [ -n "$RD" ]; then
