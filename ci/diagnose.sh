@@ -80,7 +80,7 @@ echo "eula=true" > $D/eula.txt
 printf 'online-mode=false\nlevel-seed=12345\n' > $D/server.properties
 curl -sSL -o $D/server.jar "https://meta.fabricmc.net/v2/versions/loader/1.21.1/0.17.3/1.0.3/server/jar"
 # solo le mod necessarie, alle versioni di Cobbleverse
-for pat in "Cobblemon-fabric" "mega_showdown" "architectury" "accessories-fabric" "accessories_compat_layer" "owo-lib" "fabric-api" "fabric-language-kotlin-1.13" "cobblemonraiddens" "geckolib" "cobblemon-additions"; do
+for pat in "Cobblemon-fabric" "mega_showdown" "architectury" "accessories-fabric" "accessories_compat_layer" "owo-lib" "fabric-api" "fabric-language-kotlin-1.13" "cobblemonraiddens" "geckolib" "cobblemon-additions" "zamega"; do
   cp allmods/${pat}*.jar $D/mods/ 2>/dev/null
 done
 JAR=$(ls build/libs/*.jar | grep -v sources | head -1); cp "$JAR" $D/mods/ && cp "$JAR" diag/

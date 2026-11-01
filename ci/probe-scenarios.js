@@ -15,8 +15,9 @@
       s.write(">player p1 " + JSON.stringify({ name: "A", team: team }));
       s.write(">player p2 " + JSON.stringify({ name: "B", team: [(function(){ var m = mk("Snorlax", "leftovers", "thickfat", "splash", 9); m.level = 100; return m; })()] }));
       if (b.teamPreview || (b.format && b.format.teamPreview)) {}
-      s.write(">p1 team 12"); s.write(">p2 team 1");
+      s.write(">p1 team 123"); s.write(">p2 team 1");
       r.ownRunMegaEvo = Object.prototype.hasOwnProperty.call(b.actions, "runMegaEvo");
+      r.wrappedByMegaRadar = !!b.actions.runMegaEvo.__megaradarUnlimited;
       r.runMegaEvoSrc = String(b.actions.runMegaEvo).substring(0, 160);
       for (var k = 0; k < steps.length; k++) {
         r.trace.push(steps[k] + " <- " + b.sides[0].pokemon.map(function (p) { return p.species.name + (p.isActive ? "*" : "") + "=" + (p.canMegaEvo || "no"); }).join(", "));
@@ -30,7 +31,8 @@
   var team = [mk("Gengar", "gengarite", "cursedbody", "shadowball", 1), mk("Blastoise", "blastoisinite", "torrent", "surf", 2)];
   var tough = function (sp, i) { var m = mk(sp, "leftovers", "intimidate", "splash", i); m.level = 100; m.evs.hp = 252; return m; };
   var runFoe = function (format, team2, steps) { return run(format, team2, steps); };
-  out.cobblemonsingles = run("cobblemonsingles", team, ["switch 2", "move 1 mega", "switch 2", "move 1 mega"]);
+  team.push(mk("Venusaur", "venusaurite", "overgrow", "gigadrain", 3));
+  out.cobblemonsingles = run("cobblemonsingles", team, ["switch 2", "move 1 mega", "switch 2", "move 1 mega", "switch 3", "move 1 mega"]);
   out.cobblemonsingles_blastoise_prima = run("cobblemonsingles", [team[1], team[0]], ["move 1 mega", "switch 2", "move 1 mega"]);
   try {
     var D = Dex.forFormat ? Dex : null;

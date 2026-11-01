@@ -29,10 +29,15 @@ public final class ShowdownMegaPatch implements PreLaunchEntrypoint {
 
     static final String MARK = "/* megaradar:unlimited-megas */";
     static final String ORIGINAL_NAME = "__megaradarOriginalRunMegaEvo";
+    static final String CTOR_MARK = "/* megaradar:unlimited-megas-ctor */";
+    static final String CTOR_END = "/* end megaradar:unlimited-megas-ctor */";
 
     private static final Pattern DEFINITION = Pattern.compile("(?m)^([ \\t]*)runMegaEvo\\(pokemon\\)\\s*\\{");
     private static final Pattern PATCHED = Pattern.compile(
             "(?s)([ \\t]*)runMegaEvo\\(pokemon\\) \\{ " + Pattern.quote(MARK) + ".*?" + ORIGINAL_NAME + "\\(pokemon\\) \\{");
+    private static final Pattern CONSTRUCTOR = Pattern.compile("(?m)^([ \\t]*)constructor\\(battle\\)\\s*\\{");
+    private static final Pattern CTOR_PATCHED = Pattern.compile(
+            "\\n[ \\t]*" + Pattern.quote(CTOR_MARK) + "[\\s\\S]*?" + Pattern.quote(CTOR_END));
     private static final Pattern ENABLED = Pattern.compile("\"unlimitedMegasInBattle\"\\s*:\\s*(true|false)");
 
     public enum Result { PATCHED, ALREADY_PATCHED, UNPATCHED, NOT_FOUND, NO_METHOD }
@@ -75,7 +80,7 @@ public final class ShowdownMegaPatch implements PreLaunchEntrypoint {
         try {
             if (!readEnabled(CONFIG_FILE)) return Status.DISABLED;
             if (!Files.exists(ENGINE_FILE)) return Status.NO_FILE;
-            return Files.readString(ENGINE_FILE, StandardCharsets.UTF_8).contains(MARK) ? Status.ACTIVE : Status.NOT_PATCHED;
+            return isFullyPatched(Files.readString(ENGINE_FILE, StandardCharsets.UTF_8)) ? Status.ACTIVE : Status.NOT_PATCHED;
         } catch (IOException e) {
             return Status.NO_FILE;
         }
@@ -94,18 +99,35 @@ public final class ShowdownMegaPatch implements PreLaunchEntrypoint {
     public static Result apply(Path file, boolean enabled) throws IOException {
         if (!Files.exists(file)) return Result.NOT_FOUND;
         String js = Files.readString(file, StandardCharsets.UTF_8);
-        boolean patched = js.contains(MARK);
+        String out;
 
         if (!enabled) {
-            if (!patched) return Result.ALREADY_PATCHED;
-            String restored = PATCHED.matcher(js).replaceFirst("$1runMegaEvo(pokemon) {");
-            Files.writeString(file, restored, StandardCharsets.UTF_8);
+            out = PATCHED.matcher(js).replaceFirst("$1runMegaEvo(pokemon) {");
+            out = CTOR_PATCHED.matcher(out).replaceFirst("");
+            if (out.equals(js)) return Result.ALREADY_PATCHED;
+            Files.writeString(file, out, StandardCharsets.UTF_8);
             return Result.UNPATCHED;
         }
-        if (patched) return Result.ALREADY_PATCHED;
 
+        out = js;
+        if (!out.contains(MARK)) out = patchMethod(out);
+        if (!out.contains(CTOR_MARK)) out = patchConstructor(out);
+        if (out == null) return Result.NO_METHOD;
+        if (out.equals(js)) return Result.ALREADY_PATCHED;
+        Files.writeString(file, out, StandardCharsets.UTF_8);
+        return Result.PATCHED;
+    }
+
+    /** true se il file contiene entrambe le modifiche. */
+    public static boolean isFullyPatched(String js) {
+        return js.contains(MARK) && js.contains(CTOR_MARK);
+    }
+
+    /** Patch 1: avvolge il metodo runMegaEvo della classe BattleActions. */
+    private static String patchMethod(String js) {
+        if (js == null) return null;
         Matcher m = DEFINITION.matcher(js);
-        if (!m.find()) return Result.NO_METHOD;
+        if (!m.find()) return null;
         String indent = m.group(1);
         String wrapper = indent + "runMegaEvo(pokemon) { " + MARK + "\n"
                 + indent + "  const side = pokemon.side;\n"
@@ -115,14 +137,45 @@ public final class ShowdownMegaPatch implements PreLaunchEntrypoint {
                 + indent + "  if (result && wasMega) {\n"
                 + indent + "    if (\"hasMegaEvolved\" in side) side.hasMegaEvolved = false;\n"
                 + indent + "    for (const [ally, canMega] of saved) ally.canMegaEvo = canMega;\n"
-                + indent + "    try { console.log(\"[megaradar] Mega illimitate: \" + pokemon.name + \" si e' megaevoluto, gli altri possono ancora farlo\"); } catch (e) {}\n"
                 + indent + "  }\n"
                 + indent + "  return result;\n"
                 + indent + "}\n"
                 + indent + ORIGINAL_NAME + "(pokemon) {";
-        String out = js.substring(0, m.start()) + wrapper + js.substring(m.end());
-        Files.writeString(file, out, StandardCharsets.UTF_8);
-        return Result.PATCHED;
+        return js.substring(0, m.start()) + wrapper + js.substring(m.end());
+    }
+
+    /**
+     * Patch 2: alla fine del costruttore di BattleActions, cioè DOPO che Cobblemon ha copiato sull'istanza
+     * gli script delle mod (Scripts.actions, es. quello di zamega che ridefinisce runMegaEvo),
+     * avvolge il runMegaEvo effettivo. Così il limite viene tolto qualunque mod fornisca runMegaEvo.
+     */
+    private static String patchConstructor(String js) {
+        if (js == null) return null;
+        Matcher c = CONSTRUCTOR.matcher(js);
+        if (!c.find()) return js; // costruttore non trovato: resta la sola patch 1
+        String indent = c.group(1);
+        int close = js.indexOf("\n" + indent + "}", c.end());
+        if (close < 0) return js;
+        String in = indent + "  ";
+        String block = "\n" + in + CTOR_MARK + " {\n"
+                + in + "  const inner = this.runMegaEvo;\n"
+                + in + "  if (typeof inner === \"function\" && !inner.__megaradarUnlimited) {\n"
+                + in + "    const wrapped = function (pokemon) {\n"
+                + in + "      const side = pokemon.side;\n"
+                + in + "      const wasMega = !!pokemon.canMegaEvo;\n"
+                + in + "      const saved = side.pokemon.filter((p) => p !== pokemon).map((p) => [p, p.canMegaEvo]);\n"
+                + in + "      const result = inner.call(this, pokemon);\n"
+                + in + "      if (result && wasMega) {\n"
+                + in + "        if (\"hasMegaEvolved\" in side) side.hasMegaEvolved = false;\n"
+                + in + "        for (const [ally, canMega] of saved) ally.canMegaEvo = canMega;\n"
+                + in + "      }\n"
+                + in + "      return result;\n"
+                + in + "    };\n"
+                + in + "    wrapped.__megaradarUnlimited = true;\n"
+                + in + "    this.runMegaEvo = wrapped;\n"
+                + in + "  }\n"
+                + in + "} " + CTOR_END;
+        return js.substring(0, close) + block + js.substring(close);
     }
 
     /** Per i test: java ShowdownMegaPatch <file> <true|false> */
