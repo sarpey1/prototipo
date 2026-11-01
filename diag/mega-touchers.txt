@@ -1,0 +1,14 @@
+== cobblemon-battle-extras-fabric-1.13.45
+name/modid/client/BattleMessageColorizer.class
+== cobblemonraiddens-fabric-0.11.3+1.21.1
+com/necro/raid/dens/common/showdown/events/ShowdownEvents$MegaEvolveShowdownEvent.class
+== mega_showdown-fabric-1.8.4+1.7.3+1.21.1
+com/github/yajatkaul/mega_showdown/gimmick/GimmickTurnCheck$1.class
+com/github/yajatkaul/mega_showdown/gimmick/GimmickTurnCheck.class
+com/github/yajatkaul/mega_showdown/gimmick/MegaGimmick.class
+com/github/yajatkaul/mega_showdown/event/CobbleEvents.class
+com/github/yajatkaul/mega_showdown/mixin/battle/ShowdownActionRequestMixin.class
+com/github/yajatkaul/mega_showdown/mixin/battle/GimmickTileMixin.class
+== rctapi-fabric-1.21.1-0.15.2-beta
+com/gitlab/srcmc/rctapi/api/ai/utils/ResponseBuilder.class
+com/gitlab/srcmc/rctapi/api/ai/RCTBattleAI.class

@@ -1,0 +1,14 @@
+x/assets/cobblemon-battle-extras/lang/es_es.json
+x/assets/cobblemon-battle-extras/lang/it_it.json
+x/assets/cobblemon-battle-extras/lang/es_mx.json
+x/name/modid/mixin/client/MoveTileMixin.class
+x/name/modid/client/CustomBattleTileRenderer$TileRenderSnapshot.class
+x/name/modid/client/CustomBattleController$SwitchTypeIconCacheData.class
+x/name/modid/client/BattleMessageSubscriber.class
+x/name/modid/client/CustomBattleController.class
+x/name/modid/client/BattleEntityOverlayRenderer$OverlayBattleCacheData.class
+x/name/modid/client/BattleEntityOverlayRenderer.class
+x/name/modid/client/CustomBattleTileRenderer.class
+x/name/modid/client/TypeIconRenderer.class
+x/name/modid/client/BattleMessageColorizer.class
+x/name/modid/client/NativeSinglesNameplateOverlayRenderer.class

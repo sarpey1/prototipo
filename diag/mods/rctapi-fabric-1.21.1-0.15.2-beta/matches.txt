@@ -1,0 +1,2 @@
+x/com/gitlab/srcmc/rctapi/api/ai/utils/ResponseBuilder.class
+x/com/gitlab/srcmc/rctapi/api/ai/RCTBattleAI.class

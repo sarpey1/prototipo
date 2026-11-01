@@ -1,0 +1,26 @@
+2390:  runMegaEvo(pokemon) {
+2391-    const speciesid = pokemon.canMegaEvo || pokemon.canUltraBurst;
+2392-    if (!speciesid) return false;
+2393-    pokemon.formeChange(speciesid, pokemon.getItem(), true);
+2394-    const wasMega = pokemon.canMegaEvo;
+2395-    for (const ally of pokemon.side.pokemon) {
+2396-      if (wasMega) {
+2397-        ally.canMegaEvo = null;
+2398-      } else {
+2399-        ally.canUltraBurst = null;
+2400-      }
+2401-    }
+2402-    this.battle.runEvent("AfterMega", pokemon);
+2403-    return true;
+2404-  }
+2405-  canTerastallize(pokemon) {
+2406-    if (
+2407-      pokemon.species.baseSpecies === "Rayquaza" &&
+2408-      !pokemon.getItem().zMove
+2409-    ) {
+2410-      return pokemon.teraType;
+2411-    }
+2412-    if (
+2413-      pokemon.species.name === "Groudon-Primal" ||
+2414-      pokemon.species.name === "Kyogre-Primal"
+2415-    ) {
