@@ -33,6 +33,7 @@ for J in allmods/*.jar; do
     unzip -p "$J" "$L" 2>/dev/null | grep -iE "localizzatore|locator chip|locator_chip|tracking chip" | sed "s#^#$(basename $J) $L: #"
   done
 done > diag/chip-search.txt 2>&1
+bash ci/chip-test.sh || true
 # ---- TUTTE le mod del pack: chi tocca i file del motore Showdown?
 for J in allmods/*.jar; do
   hits=$(unzip -Z1 "$J" 2>/dev/null | grep -iE "showdown/(sim|data)/|battle-actions" | head -5)
