@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "id": "lumymon",
+  "version": "0.6.6",
+  "name": "LumyMon",
+  "description": "Enhance your gameplay with custom additions.\nFully integrated with the COBBLEVERSE modpack.\n\nPokémon is a trademark of Nintendo, Creatures Inc., and GAME FREAK inc.",
+  "authors": [
+    "LUMYVERSE"
+  ],
+  "contact": {
+    "homepage": "https://www.lumyverse.com",
+    "issues": "https://discord.lumy.fun"
+  },
+  "license": "CC BY-NC-ND 4.0",
+  "icon": "assets/lumymon/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.lumyverse.lumymon.LumyMon"
+    ],
+    "client": [
+      "com.lumyverse.lumymon.LumyMonClient"
+    ],
+    "fabric-datagen": [
+      "com.lumyverse.lumymon.LumyMonDataGenerator"
+    ]
+  },
+  "mixins": [
+    "lumymon.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "\u003e\u003d0.17.2",
+    "minecraft": "~1.21.1",
+    "java": "\u003e\u003d17",
+    "fabric-api": "*",
+    "cobblemon": "\u003e\u003d1.7.1"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.curseforge": "https://www.curseforge.com/minecraft/modpacks/cobbleverse-cobblemon",
+        "modmenu.modrinth": "https://modrinth.com/modpack/cobbleverse",
+        "modmenu.discord": "https://discord.lumy.fun",
+        "modmenu.donate": "https://streamlabs.com/lumyverse",
+        "modmenu.wiki": "https://www.lumyverse.com/cobbleverse"
+      }
+    }
+  },
+  "jars": [
+    {
+      "file": "META-INF/jars/fabric-permissions-api-0.3.1.jar"
+    }
+  ]
+}

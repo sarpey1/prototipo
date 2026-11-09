@@ -1,0 +1,293 @@
+Starting net.fabricmc.loader.impl.game.minecraft.BundlerClassPathCapture
+[20:47:11] [main/INFO]: Loading Minecraft 1.21.1 with Fabric Loader 0.17.3
+[20:47:11] [ForkJoinPool-1-worker-3/WARN]: The mod "accessories_compat_layer" contains invalid entries in its mod json:
+- Unsupported root entry "#COMMENT_breaks" at line 53 column 20
+[20:47:11] [main/WARN]: Warnings were found!
+ - Mod 'Accessories Compatibility Layer' (accessories_compat_layer) 0.1.12 recommends version 3.10.0 or later of trinkets, which is missing!
+	 - You should install version 3.10.0 or later of trinkets for the optimal experience.
+[20:47:11] [main/INFO]: Loading 75 mods:
+	- accessories 1.1.0-beta.53+1.21.1
+	- accessories_compat_layer 0.1.12
+	   \-- mixinsquared 0.3.4
+	- architectury 13.0.8
+	- cobblemon 1.7.3+1.21.1
+	- cobblemon-additions 4.1.6
+	- cobblemonraiddens 0.11.3+1.21.1
+	   \-- cloth-config 15.0.140
+	        \-- cloth-basic-math 0.6.1
+	- fabric-api 0.116.14+1.21.1
+	   |-- fabric-api-base 0.4.42+6573ed8c19
+	   |-- fabric-api-lookup-api-v1 1.6.72+7b3d111d19
+	   |-- fabric-biome-api-v1 13.0.31+d527f9fd19
+	   |-- fabric-block-api-v1 1.1.0+0bc3503219
+	   |-- fabric-block-view-api-v2 1.0.11+ebb2264e19
+	   |-- fabric-blockrenderlayer-v1 1.1.52+0af3f5a719
+	   |-- fabric-client-tags-api-v1 1.2.0+1eb36c0719
+	   |-- fabric-command-api-v1 1.2.49+f71b366f19
+	   |-- fabric-command-api-v2 2.2.28+6ced4dd919
+	   |-- fabric-commands-v0 0.2.66+df3654b319
+	   |-- fabric-content-registries-v0 8.0.19+b559734419
+	   |-- fabric-convention-tags-v1 2.1.7+7f945d5b19
+	   |-- fabric-convention-tags-v2 2.12.0+c3656daa19
+	   |-- fabric-crash-report-info-v1 0.2.29+0af3f5a719
+	   |-- fabric-data-attachment-api-v1 1.4.7+5b36e0f719
+	   |-- fabric-data-generation-api-v1 20.3.0+1eb36c0719
+	   |-- fabric-dimensions-v1 4.0.1+65213ef819
+	   |-- fabric-entity-events-v1 1.8.0+2b27e0a419
+	   |-- fabric-events-interaction-v0 0.7.14+ba9dae0619
+	   |-- fabric-game-rule-api-v1 1.0.53+6ced4dd919
+	   |-- fabric-item-api-v1 11.2.0+3b3cb2e819
+	   |-- fabric-item-group-api-v1 4.1.7+def88e3a19
+	   |-- fabric-key-binding-api-v1 1.0.47+0af3f5a719
+	   |-- fabric-keybindings-v0 0.2.45+df3654b319
+	   |-- fabric-lifecycle-events-v1 2.6.0+0865547519
+	   |-- fabric-loot-api-v2 3.0.15+3f89f5a519
+	   |-- fabric-loot-api-v3 1.0.3+3f89f5a519
+	   |-- fabric-message-api-v1 6.0.14+8aaf3aca19
+	   |-- fabric-model-loading-api-v1 2.1.0+b4d813fc19
+	   |-- fabric-networking-api-v1 4.3.1+d30f6a7919
+	   |-- fabric-object-builder-api-v1 15.2.1+40875a9319
+	   |-- fabric-particles-v1 4.0.2+6573ed8c19
+	   |-- fabric-recipe-api-v1 5.0.16+2475392c19
+	   |-- fabric-registry-sync-v0 5.3.2+e3eddc2119
+	   |-- fabric-renderer-api-v1 3.4.1+b4d813fc19
+	   |-- fabric-renderer-indigo 1.7.1+c705a49c19
+	   |-- fabric-renderer-registries-v1 3.2.69+df3654b319
+	   |-- fabric-rendering-data-attachment-v1 0.3.49+73761d2e19
+	   |-- fabric-rendering-fluids-v1 3.1.6+1daea21519
+	   |-- fabric-rendering-v0 1.1.72+df3654b319
+	   |-- fabric-rendering-v1 5.1.0+ab4c25a019
+	   |-- fabric-resource-conditions-api-v1 4.3.0+8dc279b119
+	   |-- fabric-resource-loader-v0 1.3.1+5b5275af19
+	   |-- fabric-screen-api-v1 2.0.26+639b4c0719
+	   |-- fabric-screen-handler-api-v1 1.3.91+b559734419
+	   |-- fabric-sound-api-v1 1.0.23+6573ed8c19
+	   |-- fabric-tag-api-v1 1.3.0+1eb36c0719
+	   |-- fabric-transfer-api-v1 5.4.4+7b3d111d19
+	   \-- fabric-transitive-access-wideners-v1 6.2.0+45b9699719
+	- fabric-language-kotlin 1.13.13+kotlin.2.4.10
+	   |-- org_jetbrains_kotlin_kotlin-reflect 2.4.10
+	   |-- org_jetbrains_kotlin_kotlin-stdlib 2.4.10
+	   |-- org_jetbrains_kotlin_kotlin-stdlib-jdk7 2.4.10
+	   |-- org_jetbrains_kotlin_kotlin-stdlib-jdk8 2.4.10
+	   |-- org_jetbrains_kotlinx_atomicfu-jvm 0.33.0
+	   |-- org_jetbrains_kotlinx_kotlinx-coroutines-core-jvm 1.11.0
+	   |-- org_jetbrains_kotlinx_kotlinx-coroutines-jdk8 1.11.0
+	   |-- org_jetbrains_kotlinx_kotlinx-datetime-jvm 0.8.0
+	   |-- org_jetbrains_kotlinx_kotlinx-io-bytestring-jvm 0.9.1
+	   |-- org_jetbrains_kotlinx_kotlinx-io-core-jvm 0.9.1
+	   |-- org_jetbrains_kotlinx_kotlinx-serialization-cbor-jvm 1.11.0
+	   |-- org_jetbrains_kotlinx_kotlinx-serialization-core-jvm 1.11.0
+	   \-- org_jetbrains_kotlinx_kotlinx-serialization-json-jvm 1.11.0
+	- fabricloader 0.17.3
+	   \-- mixinextras 0.5.0
+	- geckolib 4.9.2
+	- java 21
+	- mega_showdown 1.8.4+1.7.3+1.21.1
+	- megaradar 1.0.5
+	- minecraft 1.21.1
+	- owo 0.12.15.4+1.21
+	   |-- blue_endless_jankson 1.2.2
+	   |-- io_wispforest_endec 0.1.5.1
+	   |-- io_wispforest_endec_gson 0.1.3.1
+	   |-- io_wispforest_endec_jankson 0.1.3.1
+	   \-- io_wispforest_endec_netty 0.1.2
+	- zamega 1.7.3
+[20:47:11] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/home/runner/work/prototipo/prototipo/itest/libraries/net/fabricmc/sponge-mixin/0.16.5+mixin.0.8.7/sponge-mixin-0.16.5+mixin.0.8.7.jar Service=Knot/Fabric Env=SERVER
+[20:47:11] [main/INFO]: Compatibility level set to JAVA_17
+[20:47:11] [main/INFO]: Compatibility level set to JAVA_21
+[20:47:11] [main/WARN]: Reference map 'geckolib.refmap.json' for geckolib.mixins.json could not be read. If this is a development environment you can ignore this message
+[20:47:12] [main/WARN]: Error loading class: net/minecraft/class_4224 (java.lang.ClassNotFoundException: net/minecraft/class_4224)
+[20:47:12] [main/WARN]: @Mixin target net.minecraft.class_4224 was not found mixins.cobblemon-common.json:ChannelMixin from mod cobblemon
+[20:47:12] [main/WARN]: Error loading class: juuxel/adorn/block/variant/BlockVariantSets (java.lang.ClassNotFoundException: juuxel/adorn/block/variant/BlockVariantSets)
+[20:47:12] [main/WARN]: @Mixin target juuxel.adorn.block.variant.BlockVariantSets was not found mixins.cobblemon-common.json:invoker.AdornRegisterInvoker from mod cobblemon
+[20:47:12] [main/WARN]: Error loading class: net/minecraft/class_1140 (java.lang.ClassNotFoundException: net/minecraft/class_1140)
+[20:47:12] [main/WARN]: @Mixin target net.minecraft.class_1140 was not found mixins.cobblemon-fabric.json:FabricSoundEngineMixin from mod cobblemon
+[20:47:12] [main/WARN]: Error loading class: com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher (java.lang.ClassNotFoundException: com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher)
+[20:47:12] [main/WARN]: @Mixin target com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher was not found megaradar.mixins.json:MsdShowdownPatcherMixin from mod megaradar
+[20:47:12] [main/WARN]: Error loading class: net/minecraft/class_287 (java.lang.ClassNotFoundException: net/minecraft/class_287)
+[20:47:12] [main/WARN]: @Mixin target net.minecraft.class_287 was not found owo.mixins.json:BufferBuilderAccessor from mod owo
+[20:47:12] [main/WARN]: Error loading class: net/minecraft/class_437 (java.lang.ClassNotFoundException: net/minecraft/class_437)
+[20:47:12] [main/WARN]: @Mixin target net.minecraft.class_437 was not found owo.mixins.json:ScreenAccessor from mod owo
+[20:47:12] [main/WARN]: Error loading class: xyz/nucleoid/server/translations/impl/language/SystemDelegatedLanguage (java.lang.ClassNotFoundException: xyz/nucleoid/server/translations/impl/language/SystemDelegatedLanguage)
+[20:47:12] [main/INFO]: Mega illimitate: motore Showdown già modificato (all'avvio)
+[20:47:12] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+[20:47:17] [main/INFO]: Setting up compat modules for Accessories!
+[20:47:17] [main/INFO]: Registered Trinkets Reloaded Listeners
+[20:47:17] [main/WARN]: Error loading class: net/minecraft/class_1132 (java.lang.ClassNotFoundException: net/minecraft/class_1132)
+[20:47:17] [main/INFO]: Booting LaxPermissionValidator, permissions will be checked using Minecrafts permission level system, see https://minecraft.fandom.com/wiki/Permission_level
+[20:47:17] [main/INFO]: Launching Cobblemon 1.7.3 
+[20:47:18] [main/ERROR]: No data fixer registered for cobblemon:pokemon
+[20:47:18] [main/ERROR]: No data fixer registered for cobblemon:empty_pokeball
+[20:47:18] [main/ERROR]: No data fixer registered for cobblemon:boat
+[20:47:18] [main/ERROR]: No data fixer registered for cobblemon:chest_boat
+[20:47:18] [main/ERROR]: No data fixer registered for cobblemon:poke_bobber
+[20:47:18] [main/ERROR]: No data fixer registered for cobblemon:generic_bedrock
+[20:47:18] [main/ERROR]: No data fixer registered for cobblemon:npc
+[20:47:19] [main/INFO]: Starting the Best Spawner...
+[20:47:19] [main/INFO]: Loaded 7 spawning condition types.
+[20:47:19] [main/INFO]: Loaded 6 spawnable position types.
+[20:47:19] [main/INFO]: Loaded 3 spawn detail types.
+[20:47:19] [Cobblemon Showdown/INFO]: Starting showdown service...
+[20:47:19] [Cobblemon Showdown/INFO]: Showdown files are up to date (v1.0.0).
+[20:47:19] [Cobblemon Showdown/INFO]: Mega illimitate: motore Showdown già modificato (dopo l'estrazione di Cobblemon)
+[20:47:21] [Cobblemon Showdown/INFO]: Showdown has been started!
+[20:47:21] [main/INFO]: Note: Cobblemon data registries are only loaded once per server instance as Pokémon species are not safe to reload.
+[20:47:21] [main/INFO]: Registered the mega_showdown:mega_showdown/custom_status registry
+[20:47:21] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/moves registry
+[20:47:21] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/ability registry
+[20:47:21] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/conditions registry
+[20:47:21] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/held_items registry
+[20:47:21] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/typecharts registry
+[20:47:21] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/scripts registry
+[20:47:21] [main/INFO]: Registered the cobblemon:molang registry
+[20:47:21] [main/INFO]: Registered the cobblemon:species_features registry
+[20:47:21] [main/INFO]: Registered the cobblemon:global_species_features registry
+[20:47:21] [main/INFO]: Registered the cobblemon:species_feature_assignments registry
+[20:47:21] [main/INFO]: Registered the cobblemon:action_effects registry
+[20:47:21] [main/INFO]: Registered the cobblemon:moves registry
+[20:47:21] [main/INFO]: Registered the cobblemon:abilities registry
+[20:47:21] [main/INFO]: Registered the cobblemon:behaviours registry
+[20:47:21] [main/INFO]: Registered the cobblemon:species registry
+[20:47:21] [main/INFO]: Registered the cobblemon:species_additions registry
+[20:47:21] [main/INFO]: Registered the cobblemon:pokeballs registry
+[20:47:21] [main/INFO]: Registered the cobblemon:properties_tab_completion registry
+[20:47:21] [main/INFO]: Registered the cobblemon:spawn_detail_presets registry
+[20:47:21] [main/INFO]: Registered the cobblemon:spawn_rules registry
+[20:47:21] [main/INFO]: Registered the cobblemon:mechanics registry
+[20:47:21] [main/INFO]: Registered the cobblemon:bag_items registry
+[20:47:21] [main/INFO]: Registered the cobblemon:held_items registry
+[20:47:21] [main/INFO]: Registered the cobblemon:dialogues registry
+[20:47:21] [main/INFO]: Registered the cobblemon:natural_materials registry
+[20:47:21] [main/INFO]: Registered the cobblemon:fossils registry
+[20:47:21] [main/INFO]: Registered the cobblemon:npc_preset registry
+[20:47:21] [main/INFO]: Registered the cobblemon:npc registry
+[20:47:21] [main/INFO]: Registered the cobblemon:dex_entries registry
+[20:47:21] [main/INFO]: Registered the cobblemon:dex_entry_additions registry
+[20:47:21] [main/INFO]: Registered the cobblemon:dexes registry
+[20:47:21] [main/INFO]: Registered the cobblemon:dex_additions registry
+[20:47:21] [main/INFO]: Registered the cobblemon:cosmetic_items registry
+[20:47:21] [main/INFO]: Registered the cobblemon:callbacks registry
+[20:47:21] [main/INFO]: Registered the cobblemon:unlockable_pc_box_wallpapers registry
+[20:47:21] [main/INFO]: Registered the cobblemon:marks registry
+[20:47:21] [main/INFO]: Registered the cobblemon:starters registry
+[20:47:21] [main/INFO]: Registered the cobblemon:spawn_pool_world registry
+[20:47:21] [main/INFO]: Registered the cobblemon:pokerods registry
+[20:47:21] [main/INFO]: Registered the cobblemon:berries registry
+[20:47:21] [main/INFO]: Registered the cobblemon:seasonings registry
+[20:47:21] [main/INFO]: Registered the cobblemon:pokemon_interactions registry
+[20:47:21] [main/INFO]: Registered the cobblemon:spawn_bait_effects registry
+[20:47:21] [main/INFO]: Registered the cobblemon:ride_settings registry
+[20:47:21] [main/INFO]: Datagen: LootTableScanner disabled (set enableLootScan=true to enable).
+[20:47:21] [main/INFO]: Datagen: ItemScanner disabled (set enableItemScan=true to enable).
+[20:47:21] [main/INFO]: Mod compatibility check results: {cobblepedia=false, fightorflight=false, cobblenav=false, sophisticatedbackpacks=false, waystones=false, cobbledollars=false, travelersbackpack=false}
+[20:47:21] [main/INFO]: Loaded lootRollMultiplierPercent = 100.0%
+[20:47:21] [main/INFO]: Cobblemon Additions mod initialized successfully.
+[20:47:21] [main/INFO]: Initialising cobblemonraiddens
+[20:47:21] [main/INFO]: Registering C2S receiver with id mega_showdown:mega_evo
+[20:47:21] [main/INFO]: Registering C2S receiver with id mega_showdown:ultra_burst
+[20:47:21] [main/INFO]: Registering C2S receiver with id mega_showdown:secret_sword_move_swap
+[20:47:21] [main/INFO]: Config Mega Radar caricata da ./config/megaradar.json
+[20:47:21] [main/WARN]: Impossibile registrare il datapack megaradar:unlimited_megas
+[20:47:21] [main/INFO]: Mega Radar inizializzato.
+[20:47:21] [main/INFO]: Unobtainium is usually found underground
+[20:47:21] [main/INFO]: Zamega Mod 正在初始化!
+[20:47:21] [main/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[20:47:23] [Worker-Main-1/ERROR]: Couldn't parse element minecraft:loot_table/bca:item_groups/fishingnav - Unknown registry key in ResourceKey[minecraft:root / minecraft:item]: cobblenav:fishingnav_item
+[20:47:23] [Worker-Main-1/WARN]: Found loot table element validation problem in {minecraft:loot_table/bca:general/bedroom}.pools[0].entries[3]->{bca:support_tables/poke_gear}.pools[0].entries[0]: Unknown loot table called bca:item_groups/fishingnav
+[20:47:23] [Worker-Main-1/WARN]: Found loot table element validation problem in {minecraft:loot_table/bca:support_tables/poke_gear}.pools[0].entries[0]: Unknown loot table called bca:item_groups/fishingnav
+[20:47:23] [main/INFO]: Loaded 2292 recipes
+[20:47:23] [main/INFO]: Loaded 2407 advancements
+[20:47:23] [main/INFO]: Loaded custom elemental statuses
+[20:47:23] [main/INFO]: Loaded 10 server scripts and 1 client scripts
+[20:47:26] [main/INFO]: Loaded 937 moves
+[20:47:26] [main/INFO]: Loaded 318 abilities
+[20:47:26] [main/INFO]: Loaded 48 entity behaviours
+[20:47:26] [main/INFO]: Finished additions
+[20:47:27] [cobblemon Datafixer Bootstrap/INFO]: 4 Datafixer optimizations took 22 milliseconds
+[20:47:28] [main/INFO]: Loaded 1025 Pokémon species
+[20:47:28] [main/INFO]: Loaded 28 spawn detail presets.
+[20:47:28] [main/INFO]: Starting dummy Showdown battle to force it to pre-load data.
+[20:47:28] [main/INFO]: Imported 266 held item IDs from showdown
+[20:47:28] [main/INFO]: Loaded 15 fossils
+[20:47:28] [main/ERROR]: Invalid path in mod resource-pack cobblemon: cobblemon:dex_entry_additions/README.md, ignoring
+[20:47:28] [main/ERROR]: Invalid path in mod resource-pack cobblemon: cobblemon:dex_additions/README.md, ignoring
+[20:47:28] [main/ERROR]: Unable to apply dex addition cobblemon:mega_z as the sub-dex cobblemon:mega_z does not exist
+[20:47:28] [main/INFO]: Loaded 6 callbacks and 0 client callbacks
+[20:47:28] [main/INFO]: Loaded 168 marks
+[20:47:29] [main/INFO]: Loaded 70 berries
+[20:47:29] [main/INFO]: Loaded 137 Pokémon interaction sets
+[20:47:30] [main/INFO]: Registering raid bosses
+[20:47:30] [main/INFO]: Registering raid buckets
+[20:47:30] [main/INFO]: Registered 0 raid buckets
+[20:47:30] [main/INFO]: Registering raid den pools
+[20:47:30] [main/INFO]: Registering raid den structures
+[20:47:30] [main/INFO]: Registering boss additions
+[20:47:30] [main/INFO]: Registered 0 boss additions
+[20:47:30] [main/INFO]: Registered 879 raid bosses
+[20:47:31] [main/INFO]: Applied 684 biome modifications to 65 of 65 new biomes in 13.08 ms
+[20:47:31] [Server thread/INFO]: Starting minecraft server version 1.21.1
+[20:47:31] [Server thread/INFO]: Loading properties
+[20:47:31] [Server thread/INFO]: Default game type: SURVIVAL
+[20:47:31] [Server thread/INFO]: Generating keypair
+[20:47:31] [Server thread/INFO]: Starting Minecraft server on *:25565
+[20:47:31] [Server thread/INFO]: Using epoll channel type
+[20:47:31] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[20:47:31] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[20:47:31] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[20:47:31] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[20:47:31] [Server thread/INFO]: Preparing level "world"
+[20:47:37] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[20:47:37] [Worker-Main-1/INFO]: Preparing spawn area: 2%
+[20:47:37] [Worker-Main-2/INFO]: Preparing spawn area: 2%
+[20:47:38] [Worker-Main-1/INFO]: Preparing spawn area: 2%
+[20:47:38] [Worker-Main-1/INFO]: Preparing spawn area: 2%
+[20:47:39] [Worker-Main-2/INFO]: Preparing spawn area: 18%
+[20:47:39] [Worker-Main-1/INFO]: Preparing spawn area: 18%
+[20:47:40] [Worker-Main-2/INFO]: Preparing spawn area: 18%
+[20:47:40] [Worker-Main-1/INFO]: Preparing spawn area: 51%
+[20:47:41] [Worker-Main-1/INFO]: Preparing spawn area: 51%
+[20:47:41] [Server thread/INFO]: Time elapsed: 4537 ms
+[20:47:41] [Server thread/INFO]: Done (9.953s)! For help, type "help"
+[20:47:41] [Server thread/INFO]: Optimizing spawn pools...
+[20:47:41] [Server thread/INFO]: Mega Showdown trovato: supporto Mega illimitate pronto
+[20:47:41] [Server thread/INFO]: Mega illimitate - stato motore Showdown: ACTIVE (/home/runner/work/prototipo/prototipo/itest/showdown/sim/battle-actions.js)
+[20:47:50] [Server thread/INFO]: [megaradar] megatest: interrogo il motore di battaglia...
+[20:47:50] [Server thread/INFO]: [megaradar] megatest: {"megas":3,"patched":true,"errors":[],"trace":["move 1 mega <- Charizard=Charizard-Mega-X, Venusaur=Venusaur-Mega, Gengar=Gengar-Mega","switch 2 <- Charizard-Mega-X=no, Venusaur=Venusaur-Mega, Gengar=Gengar-Mega","move 1 mega <- Venusaur=Venusaur-Mega, Charizard-Mega-X=no, Gengar=Gengar-Mega","switch 3 <- Venusaur-Mega=no, Charizard-Mega-X=no, Gengar=Gengar-Mega","move 1 mega <- Gengar=Gengar-Mega, Charizard-Mega-X=no, Venusaur-Mega=no"]}
+[20:47:50] [Server thread/INFO]: {"megas":3,"patched":true,"errors":[],"trace":["move 1 mega <- Charizard=Charizard-Mega-X, Venusaur=Venusaur-Mega, Gengar=Gengar-Mega","switch 2 <- Charizard-Mega-X=no, Venusaur=Venusaur-Mega, Gengar=Gengar-Mega","move 1 mega <- Venusaur=Ve
+[20:47:50] [Server thread/INFO]: nusaur-Mega, Charizard-Mega-X=no, Gengar=Gengar-Mega","switch 3 <- Venusaur-Mega=no, Charizard-Mega-X=no, Gengar=Gengar-Mega","move 1 mega <- Gengar=Gengar-Mega, Charizard-Mega-X=no, Venusaur-Mega=no"]}
+[20:47:55] [Server thread/INFO]: [megaradar] megaeval: interrogo il motore di battaglia...
+[20:47:55] [Server thread/INFO]: [megaradar] megaeval: {"cobblemonsingles":{"trace":["switch 2 <- Gengar*=Gengar-Mega, Blastoise=Blastoise-Mega, Venusaur=Venusaur-Mega","move 1 mega <- Blastoise*=Blastoise-Mega, Gengar=Gengar-Mega, Venusaur=Venusaur-Mega","switch 2 <- Blastoise-Mega*=no, Gengar=Gengar-Mega, Venusaur=Venusaur-Mega","move 1 mega <- Gengar*=Gengar-Mega, Blastoise-Mega=no, Venusaur=Venusaur-Mega","switch 3 <- Gengar-Mega*=no, Blastoise-Mega=no, Venusaur=Venusaur-Mega","move 1 mega <- Venusaur*=Venusaur-Mega, Blastoise-Mega=no, Gengar-Mega=no","FINE <- Venusaur-Mega*=no, Blastoise-Mega=no, Gengar-Mega=no"],"errors":["|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase","|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase"],"ownRunMegaEvo":true,"wrappedByMegaRadar":true,"runMegaEvoSrc":"function (pokemon) {\n          const side = pokemon.side;\n          const wasMega = !!pokemon.canMegaEvo;\n          const saved = side.pokemon.filter((p) => p !","megas":["|-mega|p1a: 00000000-0000-0000-0000-000000000002|Blastoise|","|-mega|p1a: 00000000-0000-0000-0000-000000000001|Gengar|","|-mega|p1a: 00000000-0000-0000-0000-000000000003|Venusaur|"]},"cobblemonsingles_blastoise_prima":{"trace":["move 1 mega <- Blastoise*=Blastoise-Mega, Gengar=Gengar-Mega","switch 2 <- Blastoise-Mega*=no, Gengar=Gengar-Mega","move 1 mega <- Gengar*=Gengar-Mega, Blastoise-Mega=no","FINE <- Gengar-Mega*=no, Blastoise-Mega=no"],"errors":["|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase","|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase"],"ownRunMegaEvo":true,"wrappedByMegaRadar":true,"runMegaEvoSrc":"function (pokemon) {\n          const side = pokemon.side;\n          const wasMega = !!pokemon.canMegaEvo;\n          const saved = side.pokemon.filter((p) => p !","megas":["|-mega|p1a: 00000000-0000-0000-0000-000000000002|Blastoise|","|-mega|p1a: 00000000-0000-0000-0000-000000000001|Gengar|"]},"gengarite":"{\"exists\":true,\"name\":\"Gengarite\",\"spritenum\":588,\"megaStone\":\"Gengar-Mega\",\"megaEvolves\":\"Gengar\",\"itemUser\":[\"Gengar\"],\"num\":656,\"gen\":6,\"isNonstandard\":\"Past\",\"desc\":\"If held by a Gengar, this item allows it to Mega Evolve in battle.\",\"shortDesc\":\"\",\"id\":\"gengarite\",\"fullname\":\"item: Gengarite\",\"effectType\":\"Item\",\"noCopy\":false,\"affectsFainted\":false,\"sourceEffect\":\"\",\"fling\":{\"basePower\":80},","blastoisinite":"{\"exists\":true,\"name\":\"Blastoisinite\",\"spritenum\":583,\"megaStone\":\"Blastoise-Mega\",\"megaEvolves\":\"Blastoise\",\"itemUser\":[\"Blastoise\"],\"num\":661,\"gen\":6,\"isNonstandard\":\"Past\",\"desc\":\"If held by a Blastoise, this item allows it to Mega Evolve in battle.\",\"shortDesc\":\"\",\"id\":\"blastoisinite\",\"fullname\":\"item: Blastoisinite\",\"effectType\":\"Item\",\"noCopy\":false,\"affectsFainted\":false,\"sourceEffect\":\"\",\"","gengarMega":true,"scriptsActions":[],"modScriptsActions":["canMegaEvo","runMegaEvo"],"modRunMegaEvoSrc":"runMegaEvo(p) {     const id = p.canMegaEvo || p.canUltraBurst;     if (!id) return false;      p.formeChange(id, p.getItem(), true);      if (p.species.id.includes('zygarde') && p.species.id.includes('meg')) {       const b = this.battle, o = b.toID('Core Enforcer'), n = b.toID('Nihillight'), mv = this.dex.moves.get(n);       if (mv.exists) {         let r;         for (const s of p.baseMoveSlots.concat(p.moveSlots))           s.id === o && (s.id = n, s.move = mv.name, s.target = mv.target, r = 1);          if (r) {           const am = this.dex.getActiveMove(n);           for (const a of b.queue.list)             a?.choice === 'move' && a.pokemon === p && (a.moveid === o || a.move?.id === o) && (a.moveid = n, a.move = am);         }       }     }      const m = p.canMegaEvo;     p.side.hasMegaEvolved == true;     for (const a of p.side.pokemon) m ? a.canMegaEvo = null : a.canUltraBurst = null;      return this.battle.runEvent(\"AfterMega\", p), true;   }","sameObject":true}
+[20:47:55] [Server thread/INFO]: {"cobblemonsingles":{"trace":["switch 2 <- Gengar*=Gengar-Mega, Blastoise=Blastoise-Mega, Venusaur=Venusaur-Mega","move 1 mega <- Blastoise*=Blastoise-Mega, Gengar=Gengar-Mega, Venusaur=Venusaur-Mega","switch 2 <- Blastoise-Mega*=no, Gengar
+[20:47:55] [Server thread/INFO]: =Gengar-Mega, Venusaur=Venusaur-Mega","move 1 mega <- Gengar*=Gengar-Mega, Blastoise-Mega=no, Venusaur=Venusaur-Mega","switch 3 <- Gengar-Mega*=no, Blastoise-Mega=no, Venusaur=Venusaur-Mega","move 1 mega <- Venusaur*=Venusaur-Mega, Blastois
+[20:47:55] [Server thread/INFO]: e-Mega=no, Gengar-Mega=no","FINE <- Venusaur-Mega*=no, Blastoise-Mega=no, Gengar-Mega=no"],"errors":["|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase","|error|[Invalid choice] Can't choose for Team 
+[20:47:55] [Server thread/INFO]: Preview: You're not in a Team Preview phase"],"ownRunMegaEvo":true,"wrappedByMegaRadar":true,"runMegaEvoSrc":"function (pokemon) {\n          const side = pokemon.side;\n          const wasMega = !!pokemon.canMegaEvo;\n          const saved
+[20:47:55] [Server thread/INFO]:  = side.pokemon.filter((p) => p !","megas":["|-mega|p1a: 00000000-0000-0000-0000-000000000002|Blastoise|","|-mega|p1a: 00000000-0000-0000-0000-000000000001|Gengar|","|-mega|p1a: 00000000-0000-0000-0000-000000000003|Venusaur|"]},"cobblemonsi
+[20:47:55] [Server thread/INFO]: ngles_blastoise_prima":{"trace":["move 1 mega <- Blastoise*=Blastoise-Mega, Gengar=Gengar-Mega","switch 2 <- Blastoise-Mega*=no, Gengar=Gengar-Mega","move 1 mega <- Gengar*=Gengar-Mega, Blastoise-Mega=no","FINE <- Gengar-Mega*=no, Blastoise
+[20:47:55] [Server thread/INFO]: -Mega=no"],"errors":["|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase","|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase"],"ownRunMegaEvo":true,"wrappedByMeg
+[20:47:55] [Server thread/INFO]: aRadar":true,"runMegaEvoSrc":"function (pokemon) {\n          const side = pokemon.side;\n          const wasMega = !!pokemon.canMegaEvo;\n          const saved = side.pokemon.filter((p) => p !","megas":["|-mega|p1a: 00000000-0000-0000-0000
+[20:47:55] [Server thread/INFO]: -000000000002|Blastoise|","|-mega|p1a: 00000000-0000-0000-0000-000000000001|Gengar|"]},"gengarite":"{\"exists\":true,\"name\":\"Gengarite\",\"spritenum\":588,\"megaStone\":\"Gengar-Mega\",\"megaEvolves\":\"Gengar\",\"itemUser\":[\"Gengar\"]
+[20:47:55] [Server thread/INFO]: ,\"num\":656,\"gen\":6,\"isNonstandard\":\"Past\",\"desc\":\"If held by a Gengar, this item allows it to Mega Evolve in battle.\",\"shortDesc\":\"\",\"id\":\"gengarite\",\"fullname\":\"item: Gengarite\",\"effectType\":\"Item\",\"noCopy\":fa
+[20:47:55] [Server thread/INFO]: lse,\"affectsFainted\":false,\"sourceEffect\":\"\",\"fling\":{\"basePower\":80},","blastoisinite":"{\"exists\":true,\"name\":\"Blastoisinite\",\"spritenum\":583,\"megaStone\":\"Blastoise-Mega\",\"megaEvolves\":\"Blastoise\",\"itemUser\":[\"
+[20:47:55] [Server thread/INFO]: Blastoise\"],\"num\":661,\"gen\":6,\"isNonstandard\":\"Past\",\"desc\":\"If held by a Blastoise, this item allows it to Mega Evolve in battle.\",\"shortDesc\":\"\",\"id\":\"blastoisinite\",\"fullname\":\"item: Blastoisinite\",\"effectType\"
+[20:47:55] [Server thread/INFO]: :\"Item\",\"noCopy\":false,\"affectsFainted\":false,\"sourceEffect\":\"\",\"","gengarMega":true,"scriptsActions":[],"modScriptsActions":["canMegaEvo","runMegaEvo"],"modRunMegaEvoSrc":"runMegaEvo(p) {     const id = p.canMegaEvo || p.canUltr
+[20:47:55] [Server thread/INFO]: aBurst;     if (!id) return false;      p.formeChange(id, p.getItem(), true);      if (p.species.id.includes('zygarde') && p.species.id.includes('meg')) {       const b = this.battle, o = b.toID('Core Enforcer'), n = b.toID('Nihillight'), m
+[20:47:55] [Server thread/INFO]: v = this.dex.moves.get(n);       if (mv.exists) {         let r;         for (const s of p.baseMoveSlots.concat(p.moveSlots))           s.id === o && (s.id = n, s.move = mv.name, s.target = mv.target, r = 1);          if (r) {           con
+[20:47:55] [Server thread/INFO]: st am = this.dex.getActiveMove(n);           for (const a of b.queue.list)             a?.choice === 'move' && a.pokemon === p && (a.moveid === o || a.move?.id === o) && (a.moveid = n, a.move = am);         }       }     }      const m = p.
+[20:47:55] [Server thread/INFO]: canMegaEvo;     p.side.hasMegaEvolved == true;     for (const a of p.side.pokemon) m ? a.canMegaEvo = null : a.canUltraBurst = null;      return this.battle.runEvent(\"AfterMega\", p), true;   }","sameObject":true}
+[20:48:05] [Server thread/INFO]: [megaradar] megastate: interrogo il motore di battaglia...
+[20:48:05] [Server thread/INFO]: [megaradar] megastate: [{"battle":"ef92adaf","turn":1,"format":"","patched":true,"sides":[{"side":"p1","choiceMega":false,"pokemon":["Floragato* item=- canMegaEvo=no"]},{"side":"p2","choiceMega":false,"pokemon":["Exeggcute* item=- canMegaEvo=no"]}]}]
+[20:48:05] [Server thread/INFO]: [{"battle":"ef92adaf","turn":1,"format":"","patched":true,"sides":[{"side":"p1","choiceMega":false,"pokemon":["Floragato* item=- canMegaEvo=no"]},{"side":"p2","choiceMega":false,"pokemon":["Exeggcute* item=- canMegaEvo=no"]}]}]
+[20:48:10] [Server thread/INFO]: Stopping the server
+[20:48:10] [Server thread/INFO]: Stopping server
+[20:48:10] [Server thread/INFO]: Saving players
+[20:48:10] [Server thread/INFO]: Saving worlds
+[20:48:10] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[20:48:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[20:48:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[20:48:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/cobblemonraiddens:raid_dimension
+[20:48:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[20:48:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[20:48:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[20:48:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (raid_dimension): All chunks are saved
+[20:48:11] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved

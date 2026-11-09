@@ -1,0 +1,89 @@
+diag/server-run1.log:Downloading library net.fabricmc:sponge-mixin:0.16.5+mixin.0.8.7
+diag/server-run1.log:	   \-- mixinsquared 0.3.4
+diag/server-run1.log:	   \-- mixinextras 0.5.0
+diag/server-run1.log:	- mega_showdown 1.8.4+1.7.3+1.21.1
+diag/server-run1.log:	- megaradar 1.0.5
+diag/server-run1.log:[20:42:40] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/home/runner/work/prototipo/prototipo/itest/libraries/net/fabricmc/sponge-mixin/0.16.5+mixin.0.8.7/sponge-mixin-0.16.5+mixin.0.8.7.jar Service=Knot/Fabric Env=SERVER
+diag/server-run1.log:[20:42:41] [main/WARN]: Reference map 'geckolib.refmap.json' for geckolib.mixins.json could not be read. If this is a development environment you can ignore this message
+diag/server-run1.log:[20:42:41] [main/WARN]: @Mixin target net.minecraft.class_4224 was not found mixins.cobblemon-common.json:ChannelMixin from mod cobblemon
+diag/server-run1.log:[20:42:41] [main/WARN]: @Mixin target juuxel.adorn.block.variant.BlockVariantSets was not found mixins.cobblemon-common.json:invoker.AdornRegisterInvoker from mod cobblemon
+diag/server-run1.log:[20:42:41] [main/WARN]: @Mixin target net.minecraft.class_1140 was not found mixins.cobblemon-fabric.json:FabricSoundEngineMixin from mod cobblemon
+diag/server-run1.log:[20:42:41] [main/WARN]: Error loading class: com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher (java.lang.ClassNotFoundException: com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher)
+diag/server-run1.log:[20:42:41] [main/WARN]: @Mixin target com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher was not found megaradar.mixins.json:MsdShowdownPatcherMixin from mod megaradar
+diag/server-run1.log:[20:42:41] [main/WARN]: @Mixin target net.minecraft.class_287 was not found owo.mixins.json:BufferBuilderAccessor from mod owo
+diag/server-run1.log:[20:42:41] [main/WARN]: @Mixin target net.minecraft.class_437 was not found owo.mixins.json:ScreenAccessor from mod owo
+diag/server-run1.log:[20:42:41] [main/INFO]: Mega illimitate: /home/runner/work/prototipo/prototipo/itest/showdown/sim/battle-actions.js non esiste ancora (all'avvio)
+diag/server-run1.log:[20:42:41] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Starting showdown service...
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: MegaShowdown config not found, creating default.
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/moves.js
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/battle-actions.js
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/battle.js
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/pokemons.js
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/abilities.js
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/sim/side.js
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/conditions.js
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/index.js
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/items.js
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/conditions.js
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/typechart.js
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/moves.js
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Loaded fallback file: ./showdown/data/mods/cobblemon/abilities.js
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: All files are ready!
+diag/server-run1.log:[20:42:49] [Cobblemon Showdown/INFO]: Mega illimitate: motore Showdown modificato dopo l'estrazione di Cobblemon (/home/runner/work/prototipo/prototipo/itest/showdown/sim/battle-actions.js)
+diag/server-run1.log:[20:42:50] [Cobblemon Showdown/INFO]: Showdown has been started!
+diag/server-run1.log:[20:42:50] [main/INFO]: Registered the mega_showdown:mega_showdown/custom_status registry
+diag/server-run1.log:[20:42:50] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/moves registry
+diag/server-run1.log:[20:42:50] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/ability registry
+diag/server-run1.log:[20:42:50] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/conditions registry
+diag/server-run1.log:[20:42:50] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/held_items registry
+diag/server-run1.log:[20:42:50] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/typecharts registry
+diag/server-run1.log:[20:42:50] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/scripts registry
+diag/server-run1.log:[20:42:51] [main/INFO]: Registering C2S receiver with id mega_showdown:mega_evo
+diag/server-run1.log:[20:42:51] [main/INFO]: Registering C2S receiver with id mega_showdown:ultra_burst
+diag/server-run1.log:[20:42:51] [main/INFO]: Registering C2S receiver with id mega_showdown:secret_sword_move_swap
+diag/server-run1.log:[20:42:51] [main/INFO]: Config Mega Radar caricata da ./config/megaradar.json
+diag/server-run1.log:[20:42:51] [main/WARN]: Impossibile registrare il datapack megaradar:unlimited_megas
+diag/server-run1.log:[20:42:57] [main/INFO]: Starting dummy Showdown battle to force it to pre-load data.
+diag/server-run1.log:[20:42:58] [main/INFO]: Imported 266 held item IDs from showdown
+diag/server-run2.log:	   \-- mixinsquared 0.3.4
+diag/server-run2.log:	   \-- mixinextras 0.5.0
+diag/server-run2.log:	- mega_showdown 1.8.4+1.7.3+1.21.1
+diag/server-run2.log:	- megaradar 1.0.5
+diag/server-run2.log:[20:47:11] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/home/runner/work/prototipo/prototipo/itest/libraries/net/fabricmc/sponge-mixin/0.16.5+mixin.0.8.7/sponge-mixin-0.16.5+mixin.0.8.7.jar Service=Knot/Fabric Env=SERVER
+diag/server-run2.log:[20:47:11] [main/WARN]: Reference map 'geckolib.refmap.json' for geckolib.mixins.json could not be read. If this is a development environment you can ignore this message
+diag/server-run2.log:[20:47:12] [main/WARN]: @Mixin target net.minecraft.class_4224 was not found mixins.cobblemon-common.json:ChannelMixin from mod cobblemon
+diag/server-run2.log:[20:47:12] [main/WARN]: @Mixin target juuxel.adorn.block.variant.BlockVariantSets was not found mixins.cobblemon-common.json:invoker.AdornRegisterInvoker from mod cobblemon
+diag/server-run2.log:[20:47:12] [main/WARN]: @Mixin target net.minecraft.class_1140 was not found mixins.cobblemon-fabric.json:FabricSoundEngineMixin from mod cobblemon
+diag/server-run2.log:[20:47:12] [main/WARN]: Error loading class: com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher (java.lang.ClassNotFoundException: com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher)
+diag/server-run2.log:[20:47:12] [main/WARN]: @Mixin target com/github/yajatkaul/mega_showdown/utils/ShowdownPatcher was not found megaradar.mixins.json:MsdShowdownPatcherMixin from mod megaradar
+diag/server-run2.log:[20:47:12] [main/WARN]: @Mixin target net.minecraft.class_287 was not found owo.mixins.json:BufferBuilderAccessor from mod owo
+diag/server-run2.log:[20:47:12] [main/WARN]: @Mixin target net.minecraft.class_437 was not found owo.mixins.json:ScreenAccessor from mod owo
+diag/server-run2.log:[20:47:12] [main/INFO]: Mega illimitate: motore Showdown già modificato (all'avvio)
+diag/server-run2.log:[20:47:12] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.0).
+diag/server-run2.log:[20:47:19] [Cobblemon Showdown/INFO]: Starting showdown service...
+diag/server-run2.log:[20:47:19] [Cobblemon Showdown/INFO]: Showdown files are up to date (v1.0.0).
+diag/server-run2.log:[20:47:19] [Cobblemon Showdown/INFO]: Mega illimitate: motore Showdown già modificato (dopo l'estrazione di Cobblemon)
+diag/server-run2.log:[20:47:21] [Cobblemon Showdown/INFO]: Showdown has been started!
+diag/server-run2.log:[20:47:21] [main/INFO]: Registered the mega_showdown:mega_showdown/custom_status registry
+diag/server-run2.log:[20:47:21] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/moves registry
+diag/server-run2.log:[20:47:21] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/ability registry
+diag/server-run2.log:[20:47:21] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/conditions registry
+diag/server-run2.log:[20:47:21] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/held_items registry
+diag/server-run2.log:[20:47:21] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/typecharts registry
+diag/server-run2.log:[20:47:21] [main/INFO]: Registered the mega_showdown:mega_showdown/showdown/scripts registry
+diag/server-run2.log:[20:47:21] [main/INFO]: Registering C2S receiver with id mega_showdown:mega_evo
+diag/server-run2.log:[20:47:21] [main/INFO]: Registering C2S receiver with id mega_showdown:ultra_burst
+diag/server-run2.log:[20:47:21] [main/INFO]: Registering C2S receiver with id mega_showdown:secret_sword_move_swap
+diag/server-run2.log:[20:47:21] [main/INFO]: Config Mega Radar caricata da ./config/megaradar.json
+diag/server-run2.log:[20:47:21] [main/WARN]: Impossibile registrare il datapack megaradar:unlimited_megas
+diag/server-run2.log:[20:47:28] [main/INFO]: Starting dummy Showdown battle to force it to pre-load data.
+diag/server-run2.log:[20:47:28] [main/INFO]: Imported 266 held item IDs from showdown
+diag/server-run2.log:[20:47:41] [Server thread/INFO]: Mega Showdown trovato: supporto Mega illimitate pronto
+diag/server-run2.log:[20:47:41] [Server thread/INFO]: Mega illimitate - stato motore Showdown: ACTIVE (/home/runner/work/prototipo/prototipo/itest/showdown/sim/battle-actions.js)
+diag/server-run2.log:[20:47:50] [Server thread/INFO]: [megaradar] megatest: interrogo il motore di battaglia...
+diag/server-run2.log:[20:47:50] [Server thread/INFO]: [megaradar] megatest: {"megas":3,"patched":true,"errors":[],"trace":["move 1 mega <- Charizard=Charizard-Mega-X, Venusaur=Venusaur-Mega, Gengar=Gengar-Mega","switch 2 <- Charizard-Mega-X=no, Venusaur=Venusaur-Mega, Gengar=Gengar-Mega","move 1 mega <- Venusaur=Venusaur-Mega, Charizard-Mega-X=no, Gengar=Gengar-Mega","switch 3 <- Venusaur-Mega=no, Charizard-Mega-X=no, Gengar=Gengar-Mega","move 1 mega <- Gengar=Gengar-Mega, Charizard-Mega-X=no, Venusaur-Mega=no"]}
+diag/server-run2.log:[20:47:55] [Server thread/INFO]: [megaradar] megaeval: interrogo il motore di battaglia...
+diag/server-run2.log:[20:47:55] [Server thread/INFO]: [megaradar] megaeval: {"cobblemonsingles":{"trace":["switch 2 <- Gengar*=Gengar-Mega, Blastoise=Blastoise-Mega, Venusaur=Venusaur-Mega","move 1 mega <- Blastoise*=Blastoise-Mega, Gengar=Gengar-Mega, Venusaur=Venusaur-Mega","switch 2 <- Blastoise-Mega*=no, Gengar=Gengar-Mega, Venusaur=Venusaur-Mega","move 1 mega <- Gengar*=Gengar-Mega, Blastoise-Mega=no, Venusaur=Venusaur-Mega","switch 3 <- Gengar-Mega*=no, Blastoise-Mega=no, Venusaur=Venusaur-Mega","move 1 mega <- Venusaur*=Venusaur-Mega, Blastoise-Mega=no, Gengar-Mega=no","FINE <- Venusaur-Mega*=no, Blastoise-Mega=no, Gengar-Mega=no"],"errors":["|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase","|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase"],"ownRunMegaEvo":true,"wrappedByMegaRadar":true,"runMegaEvoSrc":"function (pokemon) {\n          const side = pokemon.side;\n          const wasMega = !!pokemon.canMegaEvo;\n          const saved = side.pokemon.filter((p) => p !","megas":["|-mega|p1a: 00000000-0000-0000-0000-000000000002|Blastoise|","|-mega|p1a: 00000000-0000-0000-0000-000000000001|Gengar|","|-mega|p1a: 00000000-0000-0000-0000-000000000003|Venusaur|"]},"cobblemonsingles_blastoise_prima":{"trace":["move 1 mega <- Blastoise*=Blastoise-Mega, Gengar=Gengar-Mega","switch 2 <- Blastoise-Mega*=no, Gengar=Gengar-Mega","move 1 mega <- Gengar*=Gengar-Mega, Blastoise-Mega=no","FINE <- Gengar-Mega*=no, Blastoise-Mega=no"],"errors":["|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase","|error|[Invalid choice] Can't choose for Team Preview: You're not in a Team Preview phase"],"ownRunMegaEvo":true,"wrappedByMegaRadar":true,"runMegaEvoSrc":"function (pokemon) {\n          const side = pokemon.side;\n          const wasMega = !!pokemon.canMegaEvo;\n          const saved = side.pokemon.filter((p) => p !","megas":["|-mega|p1a: 00000000-0000-0000-0000-000000000002|Blastoise|","|-mega|p1a: 00000000-0000-0000-0000-000000000001|Gengar|"]},"gengarite":"{\"exists\":true,\"name\":\"Gengarite\",\"spritenum\":588,\"megaStone\":\"Gengar-Mega\",\"megaEvolves\":\"Gengar\",\"itemUser\":[\"Gengar\"],\"num\":656,\"gen\":6,\"isNonstandard\":\"Past\",\"desc\":\"If held by a Gengar, this item allows it to Mega Evolve in battle.\",\"shortDesc\":\"\",\"id\":\"gengarite\",\"fullname\":\"item: Gengarite\",\"effectType\":\"Item\",\"noCopy\":false,\"affectsFainted\":false,\"sourceEffect\":\"\",\"fling\":{\"basePower\":80},","blastoisinite":"{\"exists\":true,\"name\":\"Blastoisinite\",\"spritenum\":583,\"megaStone\":\"Blastoise-Mega\",\"megaEvolves\":\"Blastoise\",\"itemUser\":[\"Blastoise\"],\"num\":661,\"gen\":6,\"isNonstandard\":\"Past\",\"desc\":\"If held by a Blastoise, this item allows it to Mega Evolve in battle.\",\"shortDesc\":\"\",\"id\":\"blastoisinite\",\"fullname\":\"item: Blastoisinite\",\"effectType\":\"Item\",\"noCopy\":false,\"affectsFainted\":false,\"sourceEffect\":\"\",\"","gengarMega":true,"scriptsActions":[],"modScriptsActions":["canMegaEvo","runMegaEvo"],"modRunMegaEvoSrc":"runMegaEvo(p) {     const id = p.canMegaEvo || p.canUltraBurst;     if (!id) return false;      p.formeChange(id, p.getItem(), true);      if (p.species.id.includes('zygarde') && p.species.id.includes('meg')) {       const b = this.battle, o = b.toID('Core Enforcer'), n = b.toID('Nihillight'), mv = this.dex.moves.get(n);       if (mv.exists) {         let r;         for (const s of p.baseMoveSlots.concat(p.moveSlots))           s.id === o && (s.id = n, s.move = mv.name, s.target = mv.target, r = 1);          if (r) {           const am = this.dex.getActiveMove(n);           for (const a of b.queue.list)             a?.choice === 'move' && a.pokemon === p && (a.moveid === o || a.move?.id === o) && (a.moveid = n, a.move = am);         }       }     }      const m = p.canMegaEvo;     p.side.hasMegaEvolved == true;     for (const a of p.side.pokemon) m ? a.canMegaEvo = null : a.canUltraBurst = null;      return this.battle.runEvent(\"AfterMega\", p), true;   }","sameObject":true}
+diag/server-run2.log:[20:48:05] [Server thread/INFO]: [megaradar] megastate: interrogo il motore di battaglia...
+diag/server-run2.log:[20:48:05] [Server thread/INFO]: [megaradar] megastate: [{"battle":"ef92adaf","turn":1,"format":"","patched":true,"sides":[{"side":"p1","choiceMega":false,"pokemon":["Floragato* item=- canMegaEvo=no"]},{"side":"p2","choiceMega":false,"pokemon":["Exeggcute* item=- canMegaEvo=no"]}]}]

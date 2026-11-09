@@ -1,0 +1,71 @@
+{
+  "required": true,
+  "package": "com.github.yajatkaul.mega_showdown.fabric.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "GameRendererMixin",
+    "ShaderInstanceMixin",
+    "PokemonClientDelegateMixin"
+  ],
+  "mixins": [
+    "CobblemonDataProviderMixin",
+    "CobblemonInitialiserMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "mega_showdown-fabric-fabric-refmap.json"
+}{
+  "required": true,
+  "package": "com.github.yajatkaul.mega_showdown.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+    "MoveSlotWidgetMixin",
+    "PokemonClientDelegateMixin",
+    "battle.BattleMoveSelectionMixin",
+    "battle.BattleOverlayMixin",
+    "battle.BattleTargetSelectionMixin",
+    "client.ItemRendererMixin",
+    "client.LivingEntityRendererMixin",
+    "client.ModeBakeryMixin",
+    "client.PokemonRendererMixin",
+    "client.battle.BattleMessagePacketHandlerMixin",
+    "client.ui.MoveTileMixin",
+    "client.ui.PCGUIMixin",
+    "client.ui.SummaryCompanionMixin",
+    "client.ui.SummaryMixin",
+    "minecraft.ItemInHandRendererMixin"
+  ],
+  "mixins": [
+    "ElementsAccessor",
+    "GraalShowdownUnbundlerMixin",
+    "MovesAccessor",
+    "PlayerPartyStoreMixin",
+    "PokemonEntityMixin",
+    "PokemonSpeciesMixin",
+    "TamableAnimalMixin",
+    "TeraTypesAccessor",
+    "battle.BattleGimmickButtonCompanionMixin",
+    "battle.BattleRegistryMixin",
+    "battle.EndInstructionMixin",
+    "battle.GimmickTileMixin",
+    "battle.MoveActionResponseMixin",
+    "battle.PokemonBattleMixin",
+    "battle.ShowdownActionRequestMixin",
+    "battle.ShowdownInterpreterMixin",
+    "battle.ShowdownSpeciesMixin",
+    "battle.StartInstructionMixin",
+    "battle.instructions.AbilityInstructionMixin",
+    "battle.instructions.BagItemInstructionMixin",
+    "battle.instructions.EndItemInstructionMixin",
+    "battle.instructions.ItemInstructionMixin",
+    "minecraft.ItemStackMixin",
+    "packet.MovePartyPokemonToPCHandlerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "mega_showdown-common-common-refmap.json"
+}

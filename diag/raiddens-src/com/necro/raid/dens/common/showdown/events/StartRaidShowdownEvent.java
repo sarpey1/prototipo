@@ -1,0 +1,149 @@
+package com.necro.raid.dens.common.showdown.events;
+
+import com.cobblemon.mod.common.api.battles.interpreter.BasicContext;
+import com.cobblemon.mod.common.api.battles.interpreter.BattleContext;
+import com.cobblemon.mod.common.api.battles.interpreter.BattleContext.Type;
+import com.cobblemon.mod.common.api.battles.model.PokemonBattle;
+import com.cobblemon.mod.common.api.pokemon.stats.Stat;
+import com.cobblemon.mod.common.battles.ActiveBattlePokemon;
+import com.cobblemon.mod.common.battles.dispatch.DispatchResultKt;
+import com.cobblemon.mod.common.battles.interpreter.ContextManager;
+import com.cobblemon.mod.common.battles.pokemon.BattlePokemon;
+import com.cobblemon.mod.common.pokemon.status.VolatileStatus;
+import com.mojang.datafixers.util.Pair;
+import com.necro.raid.dens.common.raids.battle.RaidBattleState;
+import com.necro.raid.dens.common.raids.battle.RaidConditions;
+import java.util.ArrayList;
+import java.util.List;
+
+public record StartRaidShowdownEvent(RaidBattleState battleState, List<String> effects) implements ShowdownEvent {
+   @Override
+   public String build(PokemonBattle battle) {
+      StartRaidShowdownEvent.Builder builder = new StartRaidShowdownEvent.Builder(this.effects);
+      List<Pair<ContextManager, BattleContext>> contexts = new ArrayList<>();
+      if (this.battleState.terrain != null) {
+         builder.addTerrain(this.battleState.terrain);
+         contexts.add(new Pair(battle.getContextManager(), new BasicContext(this.battleState.terrain, battle.getTurn(), Type.TERRAIN, null)));
+      }
+
+      this.battleState.fields.forEach(field -> {
+         builder.addField(field);
+         contexts.add(new Pair(battle.getContextManager(), new BasicContext(field, battle.getTurn(), Type.ROOM, null)));
+      });
+      if (this.battleState.weather != null) {
+         builder.addWeather(this.battleState.weather);
+         contexts.add(new Pair(battle.getContextManager(), new BasicContext(this.battleState.weather, battle.getTurn(), Type.WEATHER, null)));
+      }
+
+      this.battleState.trainerSide.sideConditions.forEach(sideCondition -> {
+         builder.addSideConditions(this.battleState.trainerSide.side, sideCondition);
+         Type type;
+         if (RaidConditions.SCREENS.contains(sideCondition)) {
+            type = Type.SCREEN;
+         } else if (RaidConditions.HAZARDS.contains(sideCondition)) {
+            type = Type.HAZARD;
+         } else if (RaidConditions.TAILWIND.contains(sideCondition)) {
+            type = Type.TAILWIND;
+         } else {
+            type = Type.MISC;
+         }
+
+         contexts.add(new Pair(battle.getSide1().getContextManager(), new BasicContext(sideCondition, battle.getTurn(), type, null)));
+      });
+      this.battleState.bossSide.sideConditions.forEach(sideCondition -> {
+         builder.addSideConditions(this.battleState.bossSide.side, sideCondition);
+         Type type;
+         if (RaidConditions.SCREENS.contains(sideCondition)) {
+            type = Type.SCREEN;
+         } else if (RaidConditions.HAZARDS.contains(sideCondition)) {
+            type = Type.HAZARD;
+         } else if (RaidConditions.TAILWIND.contains(sideCondition)) {
+            type = Type.TAILWIND;
+         } else {
+            type = Type.MISC;
+         }
+
+         contexts.add(new Pair(battle.getSide2().getContextManager(), new BasicContext(sideCondition, battle.getTurn(), type, null)));
+      });
+      this.battleState.bossSide.pokemon.volatileStatus.forEach(status -> {
+         builder.addVolatile(status);
+         contexts.add(new Pair(battle.getSide2().getContextManager(), new BasicContext(status.getShowdownName(), battle.getTurn(), Type.VOLATILE, null)));
+      });
+      this.battleState.bossSide.pokemon.boosts.forEach((stat, stages) -> {
+         builder.setBoost(stat, stages);
+         BattlePokemon pokemon = ((ActiveBattlePokemon)battle.getSide2().getActivePokemon().getFirst()).getBattlePokemon();
+         if (pokemon != null) {
+            contexts.add(new Pair(pokemon.getContextManager(), new BasicContext(stat.getShowdownId(), battle.getTurn(), Type.BOOST, null)));
+         }
+      });
+      battle.dispatch(() -> {
+         contexts.forEach(pair -> ((ContextManager)pair.getFirst()).add(new BattleContext[]{(BattleContext)pair.getSecond()}));
+         return DispatchResultKt.getGO();
+      });
+      return builder.build();
+   }
+
+   private static class Builder {
+      private String string = ">eval battle.sides[1].pokemon[0].addVolatile('raidboss'); ";
+
+      private Builder(List<String> effects) {
+         if (effects.contains("dynamax")) {
+            this.string = this.string + "battle.sides[1].pokemon[0].addVolatile('dynamax'); ";
+         }
+
+         if (effects.contains("tera")) {
+            this.string = this.string + "battle.actions.terastallize(battle.sides[1].pokemon[0]); ";
+         }
+      }
+
+      private void addTerrain(String terrain) {
+         this.string = this.string
+            + String.format(
+               "const terrain = battle.dex.conditions.get('%1$s'); if (terrain && battle.field.terrain === '') { battle.field.terrain = terrain.id; battle.field.terrainState = { id: terrain.id, source: battle.sides[1].pokemon[0], sourceSlot: battle.sides[1].pokemon[0].getSlot(), duration: terrain.duration }; } ",
+               terrain
+            );
+      }
+
+      private void addField(String field) {
+         this.string = this.string
+            + String.format(
+               "const pseudoWeather = this.battle.dex.conditions.get('%1$s'); if (pseudoWeather && !battle.field.pseudoWeather[pseudoWeather.id]) { battle.field.pseudoWeather[pseudoWeather.id] = { id: pseudoWeather.id, source: battle.sides[1].pokemon[0], sourceSlot: battle.sides[1].pokemon[0].getSlot(), duration: pseudoWeather.duration }; } ",
+               field
+            );
+      }
+
+      private void addWeather(String weather) {
+         this.string = this.string
+            + String.format(
+               "const weather = this.battle.dex.conditions.get('%1$s'); if (weather && battle.field.weather === '') { battle.field.weather = weather.id; battle.field.weatherState = { id: weather.id }; if (weather.duration) battle.field.weatherState.duration = weather.duration; } ",
+               weather
+            );
+      }
+
+      private void addSideConditions(int side, String sideCondition) {
+         this.string = this.string
+            + String.format(
+               "const condition = battle.dex.conditions.get('%1$s'); const side = battle.sides[%2$d]; if (condition && !side.sideConditions[condition.id]) { side.sideConditions[condition.id] = { id: condition.id, target: side, source: side.pokemon[0], sourceSlot: side.pokemon[0].getSlot(), duration: condition.duration, }; battle.effectState.layers = 1; } ",
+               sideCondition,
+               side - 1
+            );
+      }
+
+      private void addVolatile(VolatileStatus status) {
+         this.string = this.string
+            + String.format(
+               "const status = battle.dex.conditions.get('%1$s'); for (let p of battle.sides[1].pokemon) { if (!p) continue; if (status) p.volatiles[status.id] = { id: status.id, name: status.name, target: p }; } ",
+               status.getShowdownName()
+            );
+      }
+
+      private void setBoost(Stat stat, int stages) {
+         this.string = this.string
+            + String.format("for (let p of battle.sides[1].pokemon) { if (!p) continue; p.boosts['%1$s'] = %2$d; } ", stat.getShowdownId(), stages);
+      }
+
+      private String build() {
+         return this.string;
+      }
+   }
+}

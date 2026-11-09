@@ -1,0 +1,6 @@
+LumyMon-0.6.6.jar assets/lumymon/lang/en_us.json:   "item.lumymon.locator_chip": "Locator Chip",
+LumyMon-0.6.6.jar assets/lumymon/lang/en_us.json:   "tooltip.lumymon.locator_chip": "Tracks the presence and trail of undiscovered §6Legendary Pokémon§r",
+LumyMon-0.6.6.jar assets/lumymon/lang/it_it.json:   "item.lumymon.locator_chip": "Chip Localizzatore",
+LumyMon-0.6.6.jar assets/lumymon/lang/it_it.json:   "tooltip.lumymon.locator_chip": "Traccia la presenza e la scia dei §6Pokémon Leggendari§r non ancora scoperti",
+basename: extra operand 'Caps-1.3.0.jar'
+Try 'basename --help' for more information.

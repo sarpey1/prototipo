@@ -1,0 +1,1 @@
+itest/.mixin.out/class/net/minecraft/class_2487.class

@@ -1,0 +1,5 @@
+package com.necro.raid.dens.common.showdown.events;
+
+public interface AbstractEvent {
+   void execute(RaidContext var1);
+}
