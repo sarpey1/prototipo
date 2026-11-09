@@ -27,6 +27,12 @@ if [ -n "$MSD" ]; then
   unzip -p "$MSD" assets/mega_showdown/showdown/battle-actions.js | grep -n "runMegaEvo(pokemon)" -A25 > diag/msd-runMegaEvo.txt 2>&1
 fi
 
+# ---- cerca "chip localizzatore" nei file di lingua di tutte le mod
+for J in allmods/*.jar; do
+  for L in $(unzip -Z1 "$J" 2>/dev/null | grep -E "lang/(it_it|en_us)\.json$"); do
+    unzip -p "$J" "$L" 2>/dev/null | grep -iE "localizzatore|locator chip|locator_chip|tracking chip" | sed "s#^#$(basename $J) $L: #"
+  done
+done > diag/chip-search.txt 2>&1
 # ---- TUTTE le mod del pack: chi tocca i file del motore Showdown?
 for J in allmods/*.jar; do
   hits=$(unzip -Z1 "$J" 2>/dev/null | grep -iE "showdown/(sim|data)/|battle-actions" | head -5)
